@@ -6,30 +6,30 @@ main {
 
 .profile {
     display: flex;
-    padding: 110px;
+    margin: auto;
     width: 100%;
     flex-direction: column;
     align-items: center;
 
     &__aside {
         display: flex;
-        width: 120px;
+        width: 64px;
         flex-direction: row;
         align-items: center;
-        background-color: #f9f9f9;
-        border-right: 1px solid #f0f0f0;
+        background-color: #FBFBFB;
+        border-right: 1px solid #EAEAEA;
 
         button {
             margin: auto;
-            padding: 10px;
-            width: 50px;
-            height: 50px;
+            padding: 5px;
+            width: 28px;
+            height: 28px;
 
             box-sizing: border-box;
             cursor: pointer;
             border: none;
-            border-radius: 25px;
-            background: url("../../assets/icons/arrow-left.svg") center /22px no-repeat #3368f1;
+            border-radius: 14px;
+            background: url("../../assets/icons/arrow-left.svg") center /14px no-repeat #3369F3;
 
             &:hover {
                 cursor: pointer;
@@ -41,11 +41,11 @@ main {
     &__avatar {
         position: relative;
         display: flex;
-        margin-bottom: 40px;
-        width: 230px;
-        height: 230px;
-        background: url("../../assets/icons/default_img.svg") center / 70px no-repeat #efefef;
-        border-radius: 115px;
+        margin-bottom: 20px;
+        width: 130px;
+        height: 130px;
+        background: url("../../assets/icons/default_img.svg") center / 45px no-repeat #EFEFEF;
+        border-radius: 65px;
     }
 
     &__form {
@@ -57,30 +57,30 @@ main {
     }
 
     h1 {
-        margin: 0 0 80px;
+        margin: 0 0 60px;
         text-align: center;
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        color: black;
+        font-size: 16px;
+        line-height: 16px;
+        color: #1E1E1E;
     }
 
     form {
-        width: 700px;
+        width: 510px;
     }
 
     &__input {
         position: relative;
         display: flex;
-        height: 60px;
+        height: 33px;
 
         label {
             position: absolute;
             top: 0;
             left: 0;
             font-weight: 500;
-            font-size: 22px;
-            line-height: 50px;
+            font-size: 13px;
+            line-height: 33px;
             cursor: text;
         }
 
@@ -90,35 +90,34 @@ main {
 
             font-family: Inter, sans-serif;
             font-weight: 400;
-            font-size: 22px;
-            line-height: 22px;
-            color: #a9a9a9;
+            font-size: 13px;
+            line-height: 33px;
+            color: #999999;
 
             border: none;
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 1px solid #EAEAEA;
 
             text-align: right;
             background-color: white;
 
             &:focus {
                 outline: none;
-                border-bottom: 1px solid #80a4ff;
             }
 
         }
     }
 
     .link {
-        width: 700px;
+        width: 510px;
         text-align: start;
         text-decoration: none;
         font-weight: 500;
-        font-size: 22px;
-        line-height: 60px;
-        border-bottom: 1px solid #eaeaea;
+        font-size: 13px;
+        line-height: 33px;
+        border-bottom: 1px solid #EAEAEA;
 
         &:first-of-type {
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
         &:hover {
@@ -127,7 +126,7 @@ main {
     }
 
     .logout {
-        color: #fd2f2f;
+        color: #FF0000;
         border-bottom: none;
     }
 }

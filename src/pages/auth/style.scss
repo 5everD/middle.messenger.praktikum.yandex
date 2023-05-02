@@ -9,41 +9,42 @@ main {
 .change-password {
     display: flex;
     margin: 0 auto;
-    width: 500px;
+    width: 340px;
     min-height: 450px;
-    padding: 80px 30px 45px;
+    padding: 50px 30px 30px;
     flex-direction: column;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
     align-self: center;
     box-sizing: border-box;
 
 
     &__title {
-        margin: 0 0 60px;
+        margin: 0 0 40px;
         text-align: center;
+        font-style: normal;
         font-weight: 500;
-        font-size: 32px;
-        line-height: 32px;
+        font-size: 20px;
+        line-height: 20px;
     }
 
     &__input {
         display: flex;
         flex-direction: column;
-        margin-bottom: 25px;
+        margin-bottom: 16px;
 
         &:last-of-type {
-            margin-bottom: 250px;
+            margin-bottom: 160px;
         }
 
         label {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             cursor: text;
 
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 14px;
-            color: #a5a5a5;
+            font-weight: 500;
+            font-size: 9px;
+            line-height: 9px;
+            color: #999999;
         }
 
         input {
@@ -51,17 +52,16 @@ main {
             width: 100%;
 
             font-family: Inter, sans-serif;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 40px;
-            color: black;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 26px;
+            color: #1E1E1E;
 
             border: none;
-            border-bottom: 1px solid #3368f1;
+            border-bottom: 1px solid #3369F3;
 
             &:focus {
                 outline: none;
-                border-bottom: 1px solid #80a4ff;
             }
 
             &[type="password"]{
@@ -71,39 +71,39 @@ main {
         }
 
         span {
-            font-size: 12px;
-            line-height: 12px;
-            color: #fd2f2f;
+            font-size: 8px;
+            line-height: 8px;
+            color: #FF2F2F;
             margin-top: 7px;
         }
     }
 
     .submit-button {
         margin-top: auto;
-        margin-bottom: 25px;
-        padding: 19px;
+        margin-bottom: 15px;
+        padding: 12px;
         min-width: 280px;
 
-        color: white;
-        font-size: 20px;
-        line-height: 20px;
-        font-weight: 400;
+        color: #FFFFFF;
+        font-size: 13px;
+        line-height: 13px;
+        font-weight: 500;
 
         box-sizing: border-box;
         cursor: pointer;
         border: none;
         border-radius: 8px;
-        background-color: #3368f1;
+        background-color: #3369F3;
     }
 
     .link {
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        color: #3368f1;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 17px;
+        color: #3369F3;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 11px;
 
         &:hover {
             opacity: 0.7;
@@ -114,7 +114,7 @@ main {
 .registration {
     &__input {
         &:last-of-type {
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
 
         input {
