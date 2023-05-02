@@ -48,11 +48,11 @@ main {
             }
 
             &::placeholder {
-                background: url("../../assets/icons/search.svg") no-repeat 80px center / 20px ;
+                background: url("../../assets/icons/search.svg") no-repeat 80px center / 20px;
             }
 
             &:not(:placeholder-shown) {
-                background: url("../../assets/icons/search.svg") #EFEFEF no-repeat 10px center / 20px ;
+                background: url("../../assets/icons/search.svg") #EFEFEF no-repeat 10px center / 20px;
                 text-align: start;
             }
         }
@@ -223,7 +223,7 @@ main {
                     width: 3px;
                     height: 3px;
                     border-radius: 3px;
-                    background-color: black;
+                    background-color: #1E1E1E;
                     margin-bottom: 1.5px;
 
                     &:last-child {
@@ -236,7 +236,7 @@ main {
                     display: flex;
                     padding: 15px;
                     top: 65px;
-                    right: 0px;
+                    right: 0;
                     width: 215px;
                     height: 90px;
                     flex-direction: column;
@@ -314,7 +314,7 @@ main {
                         font-size: 12px;
                         line-height: 15px;
                     }
-                    
+
                     .attach {
                         max-width: 382px;
                     }
@@ -347,7 +347,7 @@ main {
                             top: 4px;
                             width: 12px;
                             height: 12px;
-                            background: url("../../assets/icons/check-all-big.svg") center / 12px no-repeat #3369F3;
+                            background: url("../../assets/icons/check-all-big.svg") center / 12px no-repeat #E4EDFD;
                         }
                     }
 
@@ -359,7 +359,7 @@ main {
                             top: 4px;
                             width: 12px;
                             height: 12px;
-                            background: url("../../assets/icons/check-big.svg") center / 12px no-repeat #999999;
+                            background: url("../../assets/icons/check-big.svg") center / 12px no-repeat #E4EDFD;
                         }
                     }
                 }
