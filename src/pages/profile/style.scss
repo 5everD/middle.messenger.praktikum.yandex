@@ -1,6 +1,6 @@
 main {
     display: flex;
-    min-height: 98vh;
+    min-height: calc(100vh - 16px);
     font-family: Inter, sans-serif;
 }
 
@@ -46,6 +46,37 @@ main {
         height: 130px;
         background: url("../../assets/icons/default_img.svg") center / 45px no-repeat #EFEFEF;
         border-radius: 65px;
+    }
+
+    &__overlay {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 65px;
+        margin: 0;
+
+        p {
+            display: none;
+            margin: auto;
+            max-width: 70px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 14px;
+            color: #FFFFFF;
+        }
+
+        &:hover {
+            background-color: rgb(0 0 0 / 50%);
+            cursor: pointer;
+
+            p {
+                display: flex;
+            }
+        }
     }
 
     &__form {

@@ -9,6 +9,16 @@ massages: [
 {name: "Design Destroyer", text: "В 2008 году художник Jon Rafman начал собирать блаблабла", time: "Пн"},
 {name: "Day.", text: "Так увлекся работой по курсу, что совсем забыл его анонсировать бла бла бла", time: "1 Мая 2020"},
 {name: "Стас Рогозин", text: "Можно или сегодня или завтра бла бла бла бла бла бла бла бла бла", time: "12 Апр 2020"},
+{name: "тет-а-теты", text: "И Human Interface Guidelines и Material Design рекомендуют бла бла бла", time: "Ср"},
+{name: "1, 2, 3", text: "Миллионы россиян ежедневно проводят десятки часов своего бла бла бла", time: "Пн"},
+{name: "Design Destroyer", text: "В 2008 году художник Jon Rafman начал собирать блаблабла", time: "Пн"},
+{name: "Day.", text: "Так увлекся работой по курсу, что совсем забыл его анонсировать бла бла бла", time: "1 Мая 2020"},
+{name: "Стас Рогозин", text: "Можно или сегодня или завтра бла бла бла бла бла бла бла бла бла", time: "12 Апр 2020"},
+{name: "тет-а-теты", text: "И Human Interface Guidelines и Material Design рекомендуют бла бла бла", time: "Ср"},
+{name: "1, 2, 3", text: "Миллионы россиян ежедневно проводят десятки часов своего бла бла бла", time: "Пн"},
+{name: "Design Destroyer", text: "В 2008 году художник Jon Rafman начал собирать блаблабла", time: "Пн"},
+{name: "Day.", text: "Так увлекся работой по курсу, что совсем забыл его анонсировать бла бла бла", time: "1 Мая 2020"},
+{name: "Стас Рогозин", text: "Можно или сегодня или завтра бла бла бла бла бла бла бла бла бла", time: "12 Апр 2020"},
 ]
 
 
@@ -55,6 +65,16 @@ massage: [
                 <span class="dot"></span>
                 <span class="dot"></span>
             </button>
+            <div class="more-block">
+                <button class="more-block__add" type="button">
+                    <span class="cross"></span>
+                    Добавить пользователя
+                </button>
+                <button class="more-block__delete" type="button">
+                    <span class="cross"></span>
+                    Удалить пользователя
+                </button>
+            </div>
         </div>
         <ul class="chat-board">
             {{#each massage}}
@@ -74,6 +94,20 @@ massage: [
                 </li>
             {{/each}}
         </ul>
+        <div class="attach-block">
+            <button class="attach-block__image" type="button">
+                <span class="photo"></span>
+                Фото или Видео
+            </button>
+            <button class="attach-block__file" type="button">
+                <span class="file"></span>
+                Файл
+            </button>
+            <button class="attach-block__location" type="button">
+                <span class="location"></span>
+                Локация
+            </button>
+        </div>
         <form class="new-message" name="new-message">
             <button class="attach" type="button"></button>
             <input class="chat-input" type="text" placeholder="Сообщение" name="message" id="message" />
