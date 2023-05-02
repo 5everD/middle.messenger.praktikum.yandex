@@ -1,11 +1,11 @@
 <main class="container">
     <section class="menu">
         {{> link/link href="pages/auth/auth.hbs" text="Войти" }}
-        {{> link/link href="pages/registration/registration.hbs" text="Зарегистрироваться" }}
+        {{> link/link href="pages/auth/registration.hbs" text="Зарегистрироваться" }}
         {{> link/link href="pages/profile/profile.hbs" text="Профиль" }}
-        {{> link/link href="pages/change/change-password.hbs" text="Поменять пароль" }}
+        {{> link/link href="pages/auth/change-password.hbs" text="Поменять пароль" }}
         {{> link/link href="pages/chat/chat.hbs" text="Чат" }}
-        {{> link/link href="pages/500/page500.hbs" text="500" }}
-        {{> link/link href="pages/404/page404.hbs" text="404" }}
+        {{> link/link href="pages/errors/page500.hbs" text="500" }}
+        {{> link/link href="pages/errors/page404.hbs" text="404" }}
     </section>
 </main>

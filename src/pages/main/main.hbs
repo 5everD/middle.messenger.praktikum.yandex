@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="style.scss" />
 <main class="container">
     <section class="menu">
         {{> link/link href="../auth/auth.hbs" text="Войти" }}
-        {{> link/link href="../registration/registration.hbs" text="Зарегистрироваться" }}
+        {{> link/link href="../auth/registration.hbs" text="Зарегистрироваться" }}
         {{> link/link href="../profile/profile.hbs" text="Профиль" }}
-        {{> link/link href="../change/change-password.hbs" text="Поменять пароль" }}
-        {{> link/link href="../500/page500.hbs" text="500" }}
-        {{> link/link href="../404/page404.hbs" text="404" }}
+        {{> link/link href="../auth/change-password.hbs" text="Поменять пароль" }}
+        {{> link/link href="../errors/page500.hbs" text="500" }}
+        {{> link/link href="../errors/page404.hbs" text="404" }}
     </section>
 </main>
