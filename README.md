@@ -3,7 +3,7 @@
 ### Проектная работа: разработка веб-приложения «Чат»
 
 [![N|Solid](https://img.shields.io/badge/-Посмотреть%20макет%20Figma-orange)](https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?type=design&node-id=0%3A1&t=FrncnjMl5bcihuiA-1)
-[![N|Solid](https://img.shields.io/badge/-Посмотреть%20сайт%20на%20Netlify-blue)](https://starlit-selkie-d54ce3.netlify.app/)
+[![N|Solid](https://img.shields.io/badge/-Посмотреть%20сайт%20на%20Netlify-blue)](https://y-practicum.netlify.app/)
 
 #### Описание проэкта:
 
