@@ -1,0 +1,133 @@
+main {
+    display: flex;
+    min-height: 98vh;
+    font-family: Inter, sans-serif;
+}
+
+.profile {
+    display: flex;
+    padding: 100px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    &__aside {
+        display: flex;
+        width: 120px;
+        flex-direction: row;
+        align-items: center;
+        background-color: #f9f9f9;
+        border-right: 1px solid #f0f0f0;
+
+        button {
+            margin: auto;
+            padding: 10px;
+            width: 36px;
+            height: 36px;
+
+            box-sizing: border-box;
+            cursor: pointer;
+            border: none;
+            border-radius: 18px;
+            background: url("../../assets/icons/arrow-left.svg") center no-repeat #3368f1;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__avatar {
+        position: relative;
+        display: flex;
+        margin-bottom: 40px;
+        width: 180px;
+        height: 180px;
+        background: url("../../assets/icons/default_img.svg") center no-repeat #efefef;
+        border-radius: 90px;
+    }
+
+    &__form {
+        > div:last-child {
+            input {
+                border: none;
+            }
+        }
+    }
+
+    h1 {
+        margin: 0 0 80px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 22px;
+        color: black;
+    }
+
+    form {
+        width: 700px;
+    }
+
+    &__input {
+        position: relative;
+        display: flex;
+        height: 50px;
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 50px;
+            cursor: text;
+        }
+
+        input {
+            padding: 0;
+            width: 100%;
+
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: #a9a9a9;
+
+            border: none;
+            border-bottom: 1px solid #eaeaea;
+
+            text-align: right;
+            background-color: white;
+
+            &:focus {
+                outline: none;
+                border-bottom: 1px solid #80a4ff;
+            }
+
+        }
+    }
+
+    .link {
+        width: 700px;
+        text-align: start;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 50px;
+        border-bottom: 1px solid #eaeaea;
+
+        &:first-of-type {
+            margin-top: 40px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .logout {
+        color: #fd2f2f;
+        border-bottom: none;
+    }
+}

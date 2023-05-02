@@ -2,23 +2,26 @@
   "name": "practicum",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
-    "parcel": "^2.8.3",
     "@anikin/parcel-transformer-handlebars": "^1.0.9",
     "@parcel/transformer-sass": "^2.8.3",
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "parcel": "^2.8.3",
     "sass": "^1.62.0"
   },
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
     "@parcel/transformer-sass": "^2.8.3",
+    "handlebars": "^4.7.7",
     "parcel": "^2.8.3",
     "sass": "^1.62.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.hbs",
-    "build": "parcel build index.hbs"
+    "dev": "parcel --no-cache ./src/index.hbs ",
+    "build": "parcel build ./src/index.hbs "
   },
   "repository": {
     "type": "git",
