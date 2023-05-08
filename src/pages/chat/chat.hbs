@@ -1,0 +1,126 @@
+---
+massages: [
+{name: "Андрей", text: "Изображение", time: "10:49", count: "2"},
+{name: "Киноклуб", text: "Стикер", time: "12:00", my: "true"},
+{name: "Илья", text: "Друзья, у меня для вас особенный выпуск новостей! бла бла бла", time: "15:12", count: "4"},
+{name: "Вадим", text: "Круто", time: "Пт", my: "true", selected: "true"},
+{name: "тет-а-теты", text: "И Human Interface Guidelines и Material Design рекомендуют бла бла бла", time: "Ср"},
+{name: "1, 2, 3", text: "Миллионы россиян ежедневно проводят десятки часов своего бла бла бла", time: "Пн"},
+{name: "Design Destroyer", text: "В 2008 году художник Jon Rafman начал собирать блаблабла", time: "Пн"},
+{name: "Day.", text: "Так увлекся работой по курсу, что совсем забыл его анонсировать бла бла бла", time: "1 Мая 2020"},
+{name: "Стас Рогозин", text: "Можно или сегодня или завтра бла бла бла бла бла бла бла бла бла", time: "12 Апр 2020"},
+{name: "тет-а-теты", text: "И Human Interface Guidelines и Material Design рекомендуют бла бла бла", time: "Ср"},
+{name: "1, 2, 3", text: "Миллионы россиян ежедневно проводят десятки часов своего бла бла бла", time: "Пн"},
+{name: "Design Destroyer", text: "В 2008 году художник Jon Rafman начал собирать блаблабла", time: "Пн"},
+{name: "Day.", text: "Так увлекся работой по курсу, что совсем забыл его анонсировать бла бла бла", time: "1 Мая 2020"},
+{name: "Стас Рогозин", text: "Можно или сегодня или завтра бла бла бла бла бла бла бла бла бла", time: "12 Апр 2020"},
+{name: "тет-а-теты", text: "И Human Interface Guidelines и Material Design рекомендуют бла бла бла", time: "Ср"},
+{name: "1, 2, 3", text: "Миллионы россиян ежедневно проводят десятки часов своего бла бла бла", time: "Пн"},
+{name: "Design Destroyer", text: "В 2008 году художник Jon Rafman начал собирать блаблабла", time: "Пн"},
+{name: "Day.", text: "Так увлекся работой по курсу, что совсем забыл его анонсировать бла бла бла", time: "1 Мая 2020"},
+{name: "Стас Рогозин", text: "Можно или сегодня или завтра бла бла бла бла бла бла бла бла бла", time: "12 Апр 2020"},
+]
+
+
+name: "Вадим"
+
+massage: [
+{day: "19 июня", time: "11:56", text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА
+в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты
+летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как
+астронавты с собой забрали только кассеты с пленкой.
+\n
+
+\n
+Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло
+нетак и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на
+аукционе за 45000 евро."},
+{time: "11:56", text: "", attach: "../../assets/pic/scale_1200.webp"},
+{time: "12:00", text: "Круто!", my: "true", read: "true"},
+]
+---
+<link rel="stylesheet" href="style.scss" />
+<main class="container">
+    <aside class="chat__aside">
+        {{> link/link href="../profile/profile.hbs" text="Профиль" }}
+        <input type="text" placeholder="Поиск" />
+        <nav>
+            <ul>
+                {{#each massages}}
+                    <li>
+                        <div class="side-massage{{#if selected}} selected{{/if}} ">
+                            <div class="avatar-wrapper"></div>
+                            <div>
+                                <h3 class="name">{{name}}</h3>
+                                <p class="massage">
+                                    {{#if my}}<span>Вы: </span>{{/if}}
+                                    {{text}}
+                                </p>
+                            </div>
+                            <p class="time">{{time}}</p>
+                            {{#if count}}<p class="count">{{count}}</p>{{/if}}
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </nav>
+    </aside>
+    <section class="chat__section">
+        <div class="chat-user">
+            <div class="avatar-wrapper"></div>
+            <h3 class="name">{{name}}</h3>
+            <button class="more">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </button>
+            <div class="more-block">
+                <button class="more-block__add" type="button">
+                    <span class="cross"></span>
+                    Добавить пользователя
+                </button>
+                <button class="more-block__delete" type="button">
+                    <span class="cross"></span>
+                    Удалить пользователя
+                </button>
+            </div>
+        </div>
+        <ul class="chat-board">
+            {{#each massage}}
+                <li>
+                    {{#if day}}
+                        <h5>{{day}}</h5>
+                    {{/if}}
+                    <div class="message{{#if my}} right{{/if}} {{#if attach}} attached{{/if}}">
+                        <p>{{text}}</p>
+                        {{#if attach}}
+                            <img class="attach" src="{{attach}}" alt="attach"/>
+                        {{/if}}
+                        <span class="time{{#if my}}{{#if read}} read{{else}} unread{{/if}}{{/if}}">
+                            {{time}}
+                        </span>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+        <div class="attach-block">
+            <button class="attach-block__image" type="button">
+                <span class="photo"></span>
+                Фото или Видео
+            </button>
+            <button class="attach-block__file" type="button">
+                <span class="file"></span>
+                Файл
+            </button>
+            <button class="attach-block__location" type="button">
+                <span class="location"></span>
+                Локация
+            </button>
+        </div>
+        <form class="new-message" name="new-message">
+            <button class="attach" type="button"></button>
+            <input class="chat-input" type="text" placeholder="Сообщение" name="message" id="message" />
+            <button class="submit-button" type="submit"></button>
+        </form>
+    </section>
+</main>

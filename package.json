@@ -1,0 +1,36 @@
+{
+  "name": "practicum",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@parcel/transformer-sass": "^2.8.3",
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "parcel": "^2.8.3",
+    "sass": "^1.62.0"
+  },
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
+    "@parcel/transformer-sass": "^2.8.3",
+    "handlebars": "^4.7.7",
+    "parcel": "^2.8.3",
+    "sass": "^1.62.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel --no-cache ./src/index.hbs ",
+    "build": "parcel build ./src/index.hbs "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5everD/practicum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5everD/practicum/issues"
+  },
+  "homepage": "https://github.com/5everD/practicum#readme"
+}
