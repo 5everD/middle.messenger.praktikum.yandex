@@ -1,3 +1,5 @@
+@import "./src/styles/colors.scss";
+
 main {
     display: flex;
     min-height: calc(100vh - 16px);
@@ -12,7 +14,7 @@ main {
         height: calc(100vh - 16px);
         flex-direction: column;
         overflow: hidden;
-        background-color: #FBFBFB;
+        background-color: $tertiary-light-gray;
         box-sizing: border-box;
 
         a {
@@ -24,7 +26,7 @@ main {
             font-weight: 500;
             font-size: 12px;
             line-height: 12px;
-            color: #999999;
+            color: $gray;
             background: url("../../assets/icons/arrow-right.svg") no-repeat right 2px / 7px 10px;
 
             &:hover {
@@ -34,7 +36,7 @@ main {
 
         input {
             margin: 0 15px;
-            background-color: #EFEFEF;
+            background-color: $secondary-light-gray;
             border: none;
             padding: 10px 10px 10px 35px;
             font-weight: 500;
@@ -52,7 +54,7 @@ main {
             }
 
             &:not(:placeholder-shown) {
-                background: url("../../assets/icons/search.svg") #EFEFEF no-repeat 10px center / 20px;
+                background: url("../../assets/icons/search.svg") $secondary-light-gray no-repeat 10px center / 20px;
                 text-align: start;
             }
         }
@@ -78,7 +80,7 @@ main {
                     top: -2px;
                     left: 10px;
                     width: calc(100% - 20px);
-                    border-top: 1px solid #EAEAEA;
+                    border-top: 1px solid $secondary-light-gray;
                 }
 
                 &:last-child::after {
@@ -87,7 +89,7 @@ main {
                     bottom: 0;
                     left: 10px;
                     width: calc(100% - 20px);
-                    border-top: 1px solid #EAEAEA;
+                    border-top: 1px solid $secondary-light-gray;
                 }
 
                 .side-massage {
@@ -98,11 +100,11 @@ main {
                     cursor: pointer;
 
                     &:hover {
-                        background-color: #EDEDED;
+                        background-color: $secondary-light-gray;
                     }
 
                     &.selected {
-                        background-color: #E4EDFD;
+                        background-color: $secondary-light-blue;
                     }
 
                     .avatar {
@@ -112,7 +114,7 @@ main {
                             margin-right: 10px;
                             width: 47px;
                             height: 47px;
-                            background: url("../../assets/icons/default_img.svg") center / 20px no-repeat #EFEFEF;
+                            background: url("../../assets/icons/default_img.svg") center / 20px no-repeat $secondary-light-gray;
                             border-radius: 24px;
                         }
                     }
@@ -136,10 +138,10 @@ main {
                         font-weight: 500;
                         font-size: 12px;
                         line-height: 15px;
-                        color: #999999;
+                        color: $gray;
 
                         span {
-                            color: #1E1E1E;
+                            color: $primary-color;
                         }
                     }
 
@@ -150,7 +152,7 @@ main {
                         font-weight: 500;
                         font-size: 9px;
                         line-height: 13px;
-                        color: #999999;
+                        color: $gray;
                     }
 
                     .count {
@@ -163,9 +165,9 @@ main {
                         font-weight: 500;
                         font-size: 11px;
                         line-height: 20px;
-                        color: #FFFFFF;
+                        color: $white;
                         border-radius: 10px;
-                        background-color: #3369F3;
+                        background-color: $blue;
                     }
                 }
             }
@@ -184,7 +186,7 @@ main {
         .chat-user {
             display: flex;
             width: 100%;
-            border-bottom: 1px solid #EAEAEA;
+            border-bottom: 1px solid $secondary-light-gray;
 
             .avatar {
                 &-wrapper {
@@ -193,7 +195,7 @@ main {
                     margin: 0 10px 10px 0;
                     width: 34px;
                     height: 34px;
-                    background: url("../../assets/icons/default_img.svg") center / 20px no-repeat #EFEFEF;
+                    background: url("../../assets/icons/default_img.svg") center / 20px no-repeat $secondary-light-gray;
                     border-radius: 17px;
                 }
             }
@@ -223,7 +225,7 @@ main {
                     width: 3px;
                     height: 3px;
                     border-radius: 3px;
-                    background-color: #1E1E1E;
+                    background-color: $primary-color;
                     margin-bottom: 1.5px;
 
                     &:last-child {
@@ -241,12 +243,12 @@ main {
                     height: 90px;
                     flex-direction: column;
                     justify-content: space-between;
-                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+                    box-shadow: $shadow;
                     border-radius: 12px;
                     font-weight: 500;
                     font-size: 12px;
                     line-height: 14px;
-                    color: #1E1E1E;
+                    color: $primary-color;
                     z-index: 1000;
                     box-sizing: border-box;
 
@@ -257,7 +259,7 @@ main {
                         flex-direction: row;
                         align-items: center;
                         border: none;
-                        background-color: #FFFFFF;
+                        background-color: $white;
                         cursor: pointer;
 
                         span {
@@ -265,7 +267,7 @@ main {
                             margin-right: 10px;
                             width: 22px;
                             height: 22px;
-                            border: 1px solid #3369F3;
+                            border: 1px solid $blue;
                             border-radius: 11px;
                             background: url("../../assets/icons/blue-cross.svg") center / 12px no-repeat;
                         }
@@ -294,7 +296,7 @@ main {
                     font-weight: 500;
                     font-size: 12px;
                     line-height: 12px;
-                    color: #999999;
+                    color: $gray;
                 }
 
                 .message {
@@ -306,7 +308,7 @@ main {
                     min-width: 114px;
                     min-height: 12px;
                     border-radius: 0 12px 12px 12px;
-                    background-color: #F8F8F8;
+                    background-color: $tertiary-light-gray;
 
                     p {
                         margin: 0;
@@ -326,17 +328,17 @@ main {
                         font-weight: 500;
                         font-size: 9px;
                         line-height: 9px;
-                        color: #999999;
+                        color: $gray;
                     }
                 }
 
                 .right {
                     margin: 10px 0 10px auto;
                     border-radius: 12px 12px 0 12px;
-                    background-color: #E4EDFD;
+                    background-color: $secondary-light-gray;
 
                     span {
-                        color: #3369F3;
+                        color: $blue;
                     }
 
                     .read {
@@ -347,7 +349,7 @@ main {
                             top: 4px;
                             width: 12px;
                             height: 12px;
-                            background: url("../../assets/icons/check-all-big.svg") center / 12px no-repeat #E4EDFD;
+                            background: url("../../assets/icons/check-all-big.svg") center / 12px no-repeat $secondary-light-blue;
                         }
                     }
 
@@ -359,14 +361,14 @@ main {
                             top: 4px;
                             width: 12px;
                             height: 12px;
-                            background: url("../../assets/icons/check-big.svg") center / 12px no-repeat #E4EDFD;
+                            background: url("../../assets/icons/check-big.svg") center / 12px no-repeat $secondary-light-blue;
                         }
                     }
                 }
 
                 .attached {
                     background-color: transparent;
-                    border: 1px solid #EAEAEA;
+                    border: 1px solid $secondary-light-gray;
                 }
             }
         }
@@ -381,12 +383,12 @@ main {
             height: 130px;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+            box-shadow: $shadow;
             border-radius: 12px;
             font-weight: 500;
             font-size: 12px;
             line-height: 14px;
-            color: #1E1E1E;
+            color: $primary-color;
             z-index: 1000;
             box-sizing: border-box;
 
@@ -397,7 +399,7 @@ main {
                 flex-direction: row;
                 align-items: center;
                 border: none;
-                background-color: #FFFFFF;
+                background-color: $white;
                 cursor: pointer;
 
 
@@ -428,7 +430,7 @@ main {
             margin: auto 0 0 0;
             padding: 10px 0 0;
             align-items: center;
-            border-top: 1px solid #EAEAEA;
+            border-top: 1px solid $secondary-light-gray;
 
             .attach {
                 width: 34px;
@@ -451,13 +453,13 @@ main {
                 font-weight: 500;
                 font-size: 12px;
                 line-height: 12px;
-                color: #999999;
-                background-color: #EFEFEF;
+                color: $gray;
+                background-color: $secondary-light-gray;
                 border: none;
                 border-radius: 16px;
 
                 &:focus {
-                    outline: 2px solid #999999;
+                    outline: 2px solid $gray;
                 }
             }
 
@@ -467,7 +469,7 @@ main {
                 border-radius: 14px;
                 margin: 0 0 0 10px;
                 padding: 0;
-                background: url("../../assets/icons/arrow-left.svg") #3369F3 center / 12px no-repeat;
+                background: url("../../assets/icons/arrow-left.svg") $blue center / 12px no-repeat;
                 transform: rotate(180deg);
                 border: none;
                 cursor: pointer;

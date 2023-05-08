@@ -1,3 +1,5 @@
+@import "./src/styles/colors.scss";
+
 main {
     display: flex;
     min-height: calc(100vh - 16px);
@@ -16,8 +18,8 @@ main {
         width: 64px;
         flex-direction: row;
         align-items: center;
-        background-color: #FBFBFB;
-        border-right: 1px solid #EAEAEA;
+        background-color: $tertiary-light-gray;
+        border-right: 1px solid $secondary-light-gray;
 
         button {
             margin: auto;
@@ -29,7 +31,7 @@ main {
             cursor: pointer;
             border: none;
             border-radius: 14px;
-            background: url("../../assets/icons/arrow-left.svg") center /14px no-repeat #3369F3;
+            background: url("../../assets/icons/arrow-left.svg") center /14px no-repeat $blue;
 
             &:hover {
                 cursor: pointer;
@@ -44,7 +46,7 @@ main {
         margin-bottom: 20px;
         width: 130px;
         height: 130px;
-        background: url("../../assets/icons/default_img.svg") center / 45px no-repeat #EFEFEF;
+        background: url("../../assets/icons/default_img.svg") center / 45px no-repeat $secondary-light-gray;
         border-radius: 65px;
     }
 
@@ -66,7 +68,7 @@ main {
             font-weight: 500;
             font-size: 13px;
             line-height: 14px;
-            color: #FFFFFF;
+            color: $white;
         }
 
         &:hover {
@@ -93,7 +95,7 @@ main {
         font-weight: 600;
         font-size: 16px;
         line-height: 16px;
-        color: #1E1E1E;
+        color: $primary-color;
     }
 
     form {
@@ -123,13 +125,13 @@ main {
             font-weight: 400;
             font-size: 13px;
             line-height: 33px;
-            color: #999999;
+            color: $gray;
 
             border: none;
-            border-bottom: 1px solid #EAEAEA;
+            border-bottom: 1px solid $secondary-light-gray;
 
             text-align: right;
-            background-color: white;
+            background-color: $white;
 
             &:focus {
                 outline: none;
@@ -145,7 +147,7 @@ main {
         font-weight: 500;
         font-size: 13px;
         line-height: 33px;
-        border-bottom: 1px solid #EAEAEA;
+        border-bottom: 1px solid $secondary-light-gray;
 
         &:first-of-type {
             margin-top: 30px;
@@ -157,7 +159,7 @@ main {
     }
 
     .logout {
-        color: #FF0000;
+        color: $red;
         border-bottom: none;
     }
 }
