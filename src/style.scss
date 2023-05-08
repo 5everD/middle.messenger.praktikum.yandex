@@ -1,3 +1,5 @@
+@import "./styles/colors.scss";
+
 main {
     display: flex;
     min-height: calc(100vh - 16px);
@@ -11,24 +13,35 @@ main {
     justify-content: center;
     align-items: center;
 
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    li {
+        &:last-of-type {
+            a {
+                border-bottom: none;
+            }
+        }
+    }
+
     .link {
+        display: block;
         width: 250px;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        color: #3368f1;
+        color: $blue;
         font-weight: 400;
         font-size: 20px;
         line-height: 40px;
-        border-bottom: 1px solid #a6a6a6;
+        border-bottom: 1px solid $light-gray;
 
         &:hover {
             opacity: 0.7;
-        }
-
-
-        &:last-of-type {
-            border-bottom: none;
         }
     }
 }

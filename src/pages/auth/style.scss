@@ -1,3 +1,5 @@
+@import "./src/styles/colors.scss";
+
 main {
     display: flex;
     min-height: calc(100vh - 16px);
@@ -13,7 +15,7 @@ main {
     min-height: 450px;
     padding: 50px 30px 30px;
     flex-direction: column;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+    box-shadow: $shadow;
     border-radius: 12px;
     align-self: center;
     box-sizing: border-box;
@@ -44,7 +46,7 @@ main {
             font-weight: 500;
             font-size: 9px;
             line-height: 9px;
-            color: #999999;
+            color: $gray;
         }
 
         input {
@@ -55,10 +57,10 @@ main {
             font-weight: 500;
             font-size: 13px;
             line-height: 26px;
-            color: #1E1E1E;
+            color: $primary-color;
 
             border: none;
-            border-bottom: 1px solid #3369F3;
+            border-bottom: 1px solid $blue;
 
             &:focus {
                 outline: none;
@@ -73,7 +75,7 @@ main {
         span {
             font-size: 8px;
             line-height: 8px;
-            color: #FF2F2F;
+            color: $red;
             margin-top: 7px;
         }
     }
@@ -84,7 +86,7 @@ main {
         padding: 12px;
         min-width: 280px;
 
-        color: #FFFFFF;
+        color: $white;
         font-size: 13px;
         line-height: 13px;
         font-weight: 500;
@@ -93,14 +95,14 @@ main {
         cursor: pointer;
         border: none;
         border-radius: 8px;
-        background-color: #3369F3;
+        background-color: $blue;
     }
 
     .link {
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        color: #3369F3;
+        color: $blue;
         font-weight: 500;
         font-size: 11px;
         line-height: 11px;
@@ -119,10 +121,8 @@ main {
 
         input {
             &[type="password"] {
-                color: #fd2f2f;
+                color: $red;
             }
         }
     }
 }
-
-
