@@ -101,7 +101,6 @@ export const content = (errors: TData, values: TData, edit: boolean, isFormDisab
     button: new Button({
         class: edit ? '' : 'display-none',
         text: 'Сохранить',
-        form: 'profile',
         disabled: isFormDisabled,
     }).render(),
 
