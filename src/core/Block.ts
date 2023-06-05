@@ -123,6 +123,10 @@ class Block<PropsType extends Record<string, any> = any> {
     }
 
     private _makePropsProxy(props: PropsType) {
+        // Можно и так передать this
+        // Такой способ больше не применяется с приходом ES6+
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
+        const self = this;
         return new Proxy(props, {
             get(target, prop: string) {
                 if (prop.startsWith('_')) {
@@ -137,7 +141,7 @@ class Block<PropsType extends Record<string, any> = any> {
                 }
                 const oldValue = { ...target };
                 target[prop as keyof PropsType] = value;
-                this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldValue, target);
+                self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldValue, target);
                 return true;
             },
             deleteProperty() {
