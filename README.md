@@ -12,10 +12,13 @@
 #### примененные Технологии:
 
 ```
+TypeScript
 JavaScript
 Handlebars
 Parcel
 SASS
+eslint
+stylelint
 ```
 
 #### Установка проекта:
@@ -25,5 +28,10 @@ SASS
 3. `git checkout deploy`
 4. `npm install`
 5. `npm run build`
+
+#### Использование linter и stylelint
+
+- `npm run lint`
+- `npm run stylelint`
 
 ![N|Solid](https://img.shields.io/badge/-Всеволод%20Демидов%20©%202023-black)

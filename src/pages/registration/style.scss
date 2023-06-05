@@ -1,6 +1,7 @@
 @import "./src/styles/colors";
 
-.auth {
+
+.registration {
     display: flex;
     margin: 0 auto;
     width: 340px;
@@ -11,7 +12,6 @@
     border-radius: 12px;
     align-self: center;
     box-sizing: border-box;
-
 
     &__title {
         margin: 0 0 40px;
@@ -29,7 +29,7 @@
         margin-bottom: 16px;
 
         &:last-of-type {
-            margin-bottom: 160px;
+            margin-bottom: 50px;
         }
 
         label {

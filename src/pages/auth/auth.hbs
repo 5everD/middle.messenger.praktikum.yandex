@@ -1,23 +1,5 @@
-<link rel="stylesheet" href="style.scss" />
-<main class="container">
-    <form name="auth" class="auth">
-        {{> title/title class="auth__title" title="Вход" }}
-        {{> input/auth
-                class="auth"
-                type="text"
-                name="login"
-                label="Логин"
-                value="ivanivanov"
-
-        }}
-        {{> input/auth
-                class="auth"
-                type="password"
-                name="password"
-                label="Пароль"
-                value="ivanivanov11"
-        }}
-        {{> buttons/submit text="Авторизоваться" }}
-        {{> link/link href="../auth/registration.hbs" text="Нет аккаунта?" }}
-    </form>
-</main>
+{{{title}}}
+{{{inputLogin}}}
+{{{inputPassword}}}
+{{{button}}}
+{{{link}}}

@@ -1,0 +1,15 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "plugins": [
+        "stylelint-scss"
+    ],
+    "rules": {
+        "at-rule-no-unknown": null,
+        "selector-class-pattern": null
+    },
+    "ignoreFiles": [
+        ".parcel-cache/*",
+        "dist/*",
+        "node_modules/*"
+    ]
+}
