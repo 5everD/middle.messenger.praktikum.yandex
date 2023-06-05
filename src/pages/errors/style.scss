@@ -1,11 +1,5 @@
 @import "./src/styles/colors.scss";
 
-main {
-    display: flex;
-    min-height: calc(100vh - 16px);
-    font-family: Inter, sans-serif;
-}
-
 .error {
     display: flex;
     margin: auto;

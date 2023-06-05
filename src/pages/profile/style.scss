@@ -1,9 +1,12 @@
 @import "./src/styles/colors.scss";
 
-main {
+.inner {
     display: flex;
-    min-height: calc(100vh - 16px);
-    font-family: Inter, sans-serif;
+    width: 100%;
+
+    .display-none {
+        display: none;
+    }
 }
 
 .profile {
@@ -82,6 +85,8 @@ main {
     }
 
     &__form {
+        display: flex;
+        flex-direction: column;
         > div:last-child {
             input {
                 border: none;
@@ -136,7 +141,15 @@ main {
             &:focus {
                 outline: none;
             }
+        }
 
+        span {
+            position: absolute;
+            top: 34px;
+            font-size: 8px;
+            line-height: 8px;
+            color: $red;
+            margin-top: 7px;
         }
     }
 
@@ -147,6 +160,7 @@ main {
         font-weight: 500;
         font-size: 13px;
         line-height: 33px;
+        color: $blue;
         border-bottom: 1px solid $secondary-light-gray;
 
         &:first-of-type {
@@ -159,7 +173,25 @@ main {
     }
 
     .logout {
+        width: 510px;
         color: $red;
         border-bottom: none;
+    }
+
+    .submit-button {
+        margin: 15px auto;
+        padding: 12px;
+        min-width: 180px;
+
+        color: $white;
+        font-size: 13px;
+        line-height: 13px;
+        font-weight: 500;
+
+        box-sizing: border-box;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background-color: $blue;
     }
 }

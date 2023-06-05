@@ -1,0 +1,12 @@
+<button
+    type="submit"
+    {{#if class}}
+        class="{{class}}"
+    {{else}}
+        class="submit-button"
+    {{/if}}
+    {{#if disabled}}disabled{{/if}}
+    {{#if form}}form={{form}}{{/if}}
+>
+    {{text}}
+</button>
