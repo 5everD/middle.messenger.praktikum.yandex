@@ -11,5 +11,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/pages/main/main.html"
+  to = "/main.html"
   status = 200
