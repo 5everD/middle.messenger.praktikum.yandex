@@ -57,7 +57,7 @@ export const massage: TMassage[] = [
             + 'нетак и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на '
             + 'аукционе за 45000 евро.',
     },
-    { time: '11:56', text: '', attach: 'https://downloader.disk.yandex.ru/preview/f687004444b89178528f6584a74ae479e75e0dbde4b647f70fe854d9b6fe9111/647d75a7/nGh8rPVMlTlTKepP1cqjSJZb79Sd0D4-UTKFdrl2H0n_VOnVNiVcB4-5NxSWK8ZSNyh1XZjxfqbRGHnJYHEAug%3D%3D?uid=0&filename=scale_1200.webp&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048' },
+    { time: '11:56', text: '', attach: 'https://i.postimg.cc/hjnM3hRq/scale-1200.webp' },
     {
         time: '12:00', text: 'Круто!', my: true, read: true,
     },
