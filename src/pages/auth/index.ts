@@ -17,7 +17,7 @@ type TProps = {
 }
 
 const authPage = () => {
-    const { errors, values, onChangeValues } = validation();
+    const { errors, values, formState, onChangeValues } = validation();
 
     class Auth extends Block {
         constructor(props: TProps) {
@@ -36,8 +36,13 @@ const authPage = () => {
         event.preventDefault();
         const form = event.target as HTMLElement;
         onChangeValues(form);
+
+        if (!formState.disabled) {
+            console.log(values);
+        }
+
         page.setProps(
-            content(errors, values),
+            content(errors, values, formState.disabled),
         );
     }
 
@@ -45,7 +50,7 @@ const authPage = () => {
         const input = event.target as HTMLElement;
         onChangeValues(input);
         page.setProps(
-            content(errors, values),
+            content(errors, values, formState.disabled),
         );
     }
 
@@ -55,7 +60,7 @@ const authPage = () => {
             blur: handleBlurOrFocus,
             focus: handleBlurOrFocus,
         },
-        ...content(errors, values),
+        ...content(errors, values, formState.disabled),
     });
 
     return page;

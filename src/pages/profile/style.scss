@@ -1,4 +1,4 @@
-@import "./src/styles/colors.scss";
+@import "./src/styles/colors";
 
 .inner {
     display: flex;
@@ -80,17 +80,6 @@
         }
     }
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-
-        > div:last-child {
-            input {
-                border: none;
-            }
-        }
-    }
-
     h1 {
         margin: 0 0 60px;
         text-align: center;
@@ -144,6 +133,17 @@
             line-height: 8px;
             color: $red;
             margin-top: 7px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        > div:last-child {
+            input {
+                border: none;
+            }
         }
     }
 

@@ -12,7 +12,7 @@ class Block<PropsType extends Record<string, any> = any> {
 
     protected isHidden: boolean;
 
-    private _element: HTMLElement | null = null;
+    private _element: HTMLElement;
 
     private eventBus: () => EventBus;
 
@@ -22,13 +22,6 @@ class Block<PropsType extends Record<string, any> = any> {
         props: PropsType
     };
 
-    /** JSDoc
-     * @param {string} tagName
-     * @param {Object} props
-     * @param {Object} attributes
-     *
-     * @returns {void}
-     */
     constructor(props: PropsType, tagName = 'div', attributes = {}) {
         const eventBus = new EventBus();
 
@@ -52,7 +45,6 @@ class Block<PropsType extends Record<string, any> = any> {
     private _registerEvents(eventBus: EventBus) {
         eventBus.on(Block.EVENTS.INIT, this._init.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
-        // @ts-ignore
         eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
         eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
     }
@@ -76,7 +68,7 @@ class Block<PropsType extends Record<string, any> = any> {
     }
 
     protected init() {
-
+        return null;
     }
 
     private _componentDidMount() {
@@ -112,13 +104,13 @@ class Block<PropsType extends Record<string, any> = any> {
     };
 
     get element(): HTMLElement {
-        return this._element!;
+        return this._element;
     }
 
     private _render() {
         const block = this.render();
         this._removeEvents();
-        this._element!.innerHTML = block;
+        this._element.innerHTML = block;
         this._addEvents();
     }
 
@@ -131,9 +123,6 @@ class Block<PropsType extends Record<string, any> = any> {
     }
 
     private _makePropsProxy(props: PropsType) {
-        // eslint-disable-next-line @typescript-eslint/no-this-alias
-        const self = this;
-
         return new Proxy(props, {
             get(target, prop: string) {
                 if (prop.startsWith('_')) {
@@ -148,7 +137,7 @@ class Block<PropsType extends Record<string, any> = any> {
                 }
                 const oldValue = { ...target };
                 target[prop as keyof PropsType] = value;
-                self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldValue, target);
+                this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldValue, target);
                 return true;
             },
             deleteProperty() {
@@ -167,7 +156,7 @@ class Block<PropsType extends Record<string, any> = any> {
     }
 
     hide() {
-        this._element!.style.display = 'none';
+        this._element.style.display = 'none';
         this.isHidden = true;
     }
 
@@ -175,7 +164,7 @@ class Block<PropsType extends Record<string, any> = any> {
         const { events = {} } = this.props;
         if (events && typeof events === 'object' && Object.keys(events).length) {
             Object.keys(events).forEach((eventName) => {
-                this._element!.addEventListener(eventName, events[eventName as keyof typeof events], true);
+                this._element.addEventListener(eventName, events[eventName as keyof typeof events], true);
             });
         }
     }
@@ -184,7 +173,7 @@ class Block<PropsType extends Record<string, any> = any> {
         const { events = {} } = this.props;
         if (events && typeof events === 'object' && Object.keys(events).length) {
             Object.keys(events).forEach((eventName) => {
-                this._element!.removeEventListener(eventName, events[eventName as keyof typeof events], true);
+                this._element.removeEventListener(eventName, events[eventName as keyof typeof events], true);
             });
         }
     }

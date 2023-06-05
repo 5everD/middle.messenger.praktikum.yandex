@@ -15,7 +15,7 @@ type TData = {
 
 const className = 'registration';
 
-export const content = (errors: TData, values: TData) => ({
+export const content = (errors: TData, values: TData, isFormDisabled: boolean) => ({
     title: new Title({
         class: className,
         title: 'Регистрация',
@@ -86,6 +86,7 @@ export const content = (errors: TData, values: TData) => ({
 
     button: new Button({
         text: 'Зарегистрироваться',
+        disabled: isFormDisabled,
     }).render(),
 
     link: new Link({

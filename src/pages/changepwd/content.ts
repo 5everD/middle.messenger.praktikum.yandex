@@ -11,7 +11,7 @@ type TData = {
 
 const className = 'change-password';
 
-export const content = (errors: TData, values: TData) => ({
+export const content = (errors: TData, values: TData, isFormDisabled: boolean) => ({
     title: new Title({
         class: className,
         title: 'Смена пароля',
@@ -46,6 +46,7 @@ export const content = (errors: TData, values: TData) => ({
 
     button: new Button({
         text: 'Сохранить',
+        disabled: isFormDisabled,
     }).render(),
 
     link: new Link({

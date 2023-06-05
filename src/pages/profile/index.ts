@@ -26,7 +26,7 @@ export type TProps = {
     linkExit: Link,
 }
 
-const profilePage = (edit: boolean = false) => {
+const profilePage = (edit = false) => {
     const {
         errors, values, init: initValidator, formState, onChangeValues,
     } = validation();
@@ -72,6 +72,7 @@ const profilePage = (edit: boolean = false) => {
         onChangeValues(form);
 
         if (!formState.disabled) {
+            console.log(values);
             edit = false;
         }
 

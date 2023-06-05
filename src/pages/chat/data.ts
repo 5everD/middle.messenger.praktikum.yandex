@@ -63,4 +63,4 @@ export const massage: TMassage[] = [
     },
 ];
 
-export const name: string = 'Вадим';
+export const name = 'Вадим';
