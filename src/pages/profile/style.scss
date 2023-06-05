@@ -29,7 +29,6 @@
             padding: 5px;
             width: 28px;
             height: 28px;
-
             box-sizing: border-box;
             cursor: pointer;
             border: none;
@@ -56,10 +55,7 @@
     &__overlay {
         display: flex;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset: 0;
         border-radius: 65px;
         margin: 0;
 
@@ -87,6 +83,7 @@
     &__form {
         display: flex;
         flex-direction: column;
+
         > div:last-child {
             input {
                 border: none;
@@ -125,16 +122,13 @@
         input {
             padding: 0;
             width: 100%;
-
             font-family: Inter, sans-serif;
             font-weight: 400;
             font-size: 13px;
             line-height: 33px;
             color: $gray;
-
             border: none;
             border-bottom: 1px solid $secondary-light-gray;
-
             text-align: right;
             background-color: $white;
 
@@ -182,12 +176,10 @@
         margin: 15px auto;
         padding: 12px;
         min-width: 180px;
-
         color: $white;
         font-size: 13px;
         line-height: 13px;
         font-weight: 500;
-
         box-sizing: border-box;
         cursor: pointer;
         border: none;

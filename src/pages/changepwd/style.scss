@@ -35,7 +35,6 @@
         label {
             margin-bottom: 2px;
             cursor: text;
-
             font-weight: 500;
             font-size: 9px;
             line-height: 9px;
@@ -45,13 +44,11 @@
         input {
             padding: 0;
             width: 100%;
-
             font-family: Inter, sans-serif;
             font-weight: 500;
             font-size: 13px;
             line-height: 26px;
             color: $primary-color;
-
             border: none;
             border-bottom: 1px solid $blue;
 
@@ -80,12 +77,10 @@
         margin-bottom: 15px;
         padding: 12px;
         min-width: 280px;
-
         color: $white;
         font-size: 13px;
         line-height: 13px;
         font-weight: 500;
-
         box-sizing: border-box;
         cursor: pointer;
         border: none;

@@ -301,7 +301,7 @@
                     max-width: 402px;
                     min-width: 114px;
                     min-height: 12px;
-                    border-radius: 0 12px 12px 12px;
+                    border-radius: 0 12px 12px;
                     background-color: $tertiary-light-gray;
 
                     p {
@@ -328,7 +328,7 @@
 
                 .right {
                     margin: 10px 0 10px auto;
-                    border-radius: 12px 12px 0 12px;
+                    border-radius: 12px 12px 0;
                     background-color: $secondary-light-gray;
 
                     span {
@@ -421,7 +421,7 @@
         .new-message {
             position: relative;
             display: flex;
-            margin: auto 0 0 0;
+            margin: auto 0 0;
             padding: 10px 0 0;
             align-items: center;
             border-top: 1px solid $secondary-light-gray;
