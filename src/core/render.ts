@@ -2,8 +2,10 @@ import Block from './Block';
 
 function render(selector: string, component: Block<Record<string, unknown>>) {
     const root = document.querySelector(selector);
-    root!.innerHTML = '';
-    root!.appendChild(component.getContent());
+    if (root) {
+        root.innerHTML = "";
+        root.append(component.getContent());
+    }
     return root;
 }
 

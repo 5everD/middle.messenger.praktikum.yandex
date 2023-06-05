@@ -64,14 +64,12 @@ export function validation() {
     };
 
     const _setValues = (newValues: TValidationsData = {}) => {
-        // @ts-ignore
         Object.entries(newValues).forEach(([key, value]: [TKeys, string]) => {
             values[key] = value;
         });
     };
 
     const _setErrors = (values: TValidationsData = {}) => {
-        // @ts-ignore
         Object.entries(values).forEach(([key, value]: [TKeys, string]) => {
             switch (key) {
             case 'login':

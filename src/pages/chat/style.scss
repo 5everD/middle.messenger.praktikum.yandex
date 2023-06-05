@@ -1,6 +1,313 @@
-@import "./src/styles/colors.scss";
+@import "./src/styles/colors";
 
 .chat {
+    &__section {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        padding: 10px 10px 0 20px;
+        height: calc(100vh - 16px);
+        flex-direction: column;
+        box-sizing: border-box;
+
+        .attach-block {
+            position: absolute;
+            display: flex;
+            padding: 15px;
+            bottom: 55px;
+            left: 10px;
+            width: 165px;
+            height: 130px;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: $shadow;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            color: $primary-color;
+            z-index: 1000;
+            box-sizing: border-box;
+
+            button {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                flex-direction: row;
+                align-items: center;
+                border: none;
+                background-color: $white;
+                cursor: pointer;
+
+
+                span {
+                    display: flex;
+                    margin-right: 10px;
+                    width: 22px;
+                    height: 22px;
+                }
+
+                .photo {
+                    background: url("../../assets/icons/image-blue.svg") center / 22px no-repeat;
+                }
+
+                .file {
+                    background: url("../../assets/icons/file.svg") center / 22px no-repeat;
+                }
+
+                .location {
+                    background: url("../../assets/icons/location.svg") center / 22px no-repeat;
+                }
+            }
+        }
+
+        .chat-user {
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid $secondary-light-gray;
+
+            .avatar {
+                &-wrapper {
+                    position: relative;
+                    display: flex;
+                    margin: 0 10px 10px 0;
+                    width: 34px;
+                    height: 34px;
+                    background: url("../../assets/icons/default_img.svg") center / 20px no-repeat $secondary-light-gray;
+                    border-radius: 17px;
+                }
+            }
+
+            .name {
+                margin: 10px 0 0;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 13px;
+            }
+
+            .more {
+                display: flex;
+                margin: 0 0 0 auto;
+                padding: 0;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                width: 34px;
+                height: 34px;
+                border-radius: 17px;
+                background-color: inherit;
+                cursor: pointer;
+
+                .dot {
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 3px;
+                    background-color: $primary-color;
+                    margin-bottom: 1.5px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &__delete {
+                    span {
+                        transform: rotate(45deg);
+                    }
+                }
+
+                &-block {
+                    position: absolute;
+                    display: flex;
+                    padding: 15px;
+                    top: 65px;
+                    right: 0;
+                    width: 215px;
+                    height: 90px;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    box-shadow: $shadow;
+                    border-radius: 12px;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: $primary-color;
+                    z-index: 1000;
+                    box-sizing: border-box;
+
+                    button {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+                        flex-direction: row;
+                        align-items: center;
+                        border: none;
+                        background-color: $white;
+                        cursor: pointer;
+
+                        span {
+                            display: flex;
+                            margin-right: 10px;
+                            width: 22px;
+                            height: 22px;
+                            border: 1px solid $blue;
+                            border-radius: 11px;
+                            background: url("../../assets/icons/blue-cross.svg") center / 12px no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+
+        .new-message {
+            position: relative;
+            display: flex;
+            margin: auto 0 0;
+            padding: 10px 0 0;
+            align-items: center;
+            border-top: 1px solid $secondary-light-gray;
+
+            .attach {
+                width: 34px;
+                height: 34px;
+                border-radius: 17px;
+                margin: 0 10px 0 0;
+                padding: 0;
+                background: url("../../assets/icons/sattach.svg") center / 34px no-repeat;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+
+            .chat-input {
+                padding: 10px 20px;
+                width: calc(100% - 38px);
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 12px;
+                color: $gray;
+                background-color: $secondary-light-gray;
+                border: none;
+                border-radius: 16px;
+
+                &:focus {
+                    outline: 2px solid $gray;
+                }
+            }
+
+            .submit-button {
+                width: 28px;
+                height: 28px;
+                border-radius: 14px;
+                margin: 0 0 0 10px;
+                padding: 0;
+                background: url("../../assets/icons/arrow-left.svg") $blue center / 12px no-repeat;
+                transform: rotate(180deg);
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .chat-board {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                display: flex;
+                flex-direction: column;
+
+                h5 {
+                    margin: 48px auto 30px;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 12px;
+                    color: $gray;
+                }
+
+                .message {
+                    position: relative;
+                    display: flex;
+                    margin: 0 auto 10px 0;
+                    padding: 11px;
+                    max-width: 402px;
+                    min-width: 114px;
+                    min-height: 12px;
+                    border-radius: 0 12px 12px;
+                    background-color: $tertiary-light-gray;
+
+                    p {
+                        margin: 0;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+
+                    .attach {
+                        max-width: 382px;
+                    }
+
+                    span {
+                        position: absolute;
+                        bottom: 11px;
+                        right: 11px;
+                        font-weight: 500;
+                        font-size: 9px;
+                        line-height: 9px;
+                        color: $gray;
+                    }
+                }
+
+                .right {
+                    margin: 10px 0 10px auto;
+                    border-radius: 12px 12px 0;
+                    background-color: $secondary-light-gray;
+
+                    span {
+                        color: $blue;
+                    }
+
+                    .read {
+                        &::before {
+                            content: "";
+                            position: relative;
+                            display: inline-block;
+                            top: 4px;
+                            width: 12px;
+                            height: 12px;
+                            background: url("../../assets/icons/check-all-big.svg") center / 12px no-repeat $secondary-light-blue;
+                        }
+                    }
+
+                    .unread {
+                        &::before {
+                            content: "";
+                            position: relative;
+                            display: inline-block;
+                            top: 4px;
+                            width: 12px;
+                            height: 12px;
+                            background: url("../../assets/icons/check-big.svg") center / 12px no-repeat $secondary-light-blue;
+                        }
+                    }
+                }
+
+                .attached {
+                    background-color: transparent;
+                    border: 1px solid $secondary-light-gray;
+                }
+            }
+        }
+    }
+
     &__aside {
         display: flex;
         padding: 20px 0 0;
@@ -53,7 +360,7 @@
             }
         }
 
-        ul {
+        .side-ul {
             margin: 15px 0 0;
             padding: 0;
             list-style-type: none;
@@ -163,313 +470,6 @@
                         border-radius: 10px;
                         background-color: $blue;
                     }
-                }
-            }
-        }
-    }
-
-    &__section {
-        position: relative;
-        display: flex;
-        flex: 1 1 auto;
-        padding: 10px 10px 0 20px;
-        height: calc(100vh - 16px);
-        flex-direction: column;
-        box-sizing: border-box;
-
-        .chat-user {
-            display: flex;
-            width: 100%;
-            border-bottom: 1px solid $secondary-light-gray;
-
-            .avatar {
-                &-wrapper {
-                    position: relative;
-                    display: flex;
-                    margin: 0 10px 10px 0;
-                    width: 34px;
-                    height: 34px;
-                    background: url("../../assets/icons/default_img.svg") center / 20px no-repeat $secondary-light-gray;
-                    border-radius: 17px;
-                }
-            }
-
-            .name {
-                margin: 10px 0 0;
-                font-weight: 600;
-                font-size: 13px;
-                line-height: 13px;
-            }
-
-            .more {
-                display: flex;
-                margin: 0 0 0 auto;
-                padding: 0;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                border: none;
-                width: 34px;
-                height: 34px;
-                border-radius: 17px;
-                background-color: inherit;
-                cursor: pointer;
-
-                .dot {
-                    width: 3px;
-                    height: 3px;
-                    border-radius: 3px;
-                    background-color: $primary-color;
-                    margin-bottom: 1.5px;
-
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-
-                &-block {
-                    position: absolute;
-                    display: flex;
-                    padding: 15px;
-                    top: 65px;
-                    right: 0;
-                    width: 215px;
-                    height: 90px;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    box-shadow: $shadow;
-                    border-radius: 12px;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 14px;
-                    color: $primary-color;
-                    z-index: 1000;
-                    box-sizing: border-box;
-
-                    button {
-                        display: flex;
-                        padding: 0;
-                        margin: 0;
-                        flex-direction: row;
-                        align-items: center;
-                        border: none;
-                        background-color: $white;
-                        cursor: pointer;
-
-                        span {
-                            display: flex;
-                            margin-right: 10px;
-                            width: 22px;
-                            height: 22px;
-                            border: 1px solid $blue;
-                            border-radius: 11px;
-                            background: url("../../assets/icons/blue-cross.svg") center / 12px no-repeat;
-                        }
-                    }
-
-                    &__delete {
-                        span {
-                            transform: rotate(45deg);
-                        }
-                    }
-                }
-            }
-        }
-
-        .chat-board {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-
-            li {
-                display: flex;
-                flex-direction: column;
-
-                h5 {
-                    margin: 48px auto 30px;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 12px;
-                    color: $gray;
-                }
-
-                .message {
-                    position: relative;
-                    display: flex;
-                    margin: 0 auto 10px 0;
-                    padding: 11px;
-                    max-width: 402px;
-                    min-width: 114px;
-                    min-height: 12px;
-                    border-radius: 0 12px 12px;
-                    background-color: $tertiary-light-gray;
-
-                    p {
-                        margin: 0;
-                        font-weight: 500;
-                        font-size: 12px;
-                        line-height: 15px;
-                    }
-
-                    .attach {
-                        max-width: 382px;
-                    }
-
-                    span {
-                        position: absolute;
-                        bottom: 11px;
-                        right: 11px;
-                        font-weight: 500;
-                        font-size: 9px;
-                        line-height: 9px;
-                        color: $gray;
-                    }
-                }
-
-                .right {
-                    margin: 10px 0 10px auto;
-                    border-radius: 12px 12px 0;
-                    background-color: $secondary-light-gray;
-
-                    span {
-                        color: $blue;
-                    }
-
-                    .read {
-                        &::before {
-                            content: "";
-                            position: relative;
-                            display: inline-block;
-                            top: 4px;
-                            width: 12px;
-                            height: 12px;
-                            background: url("../../assets/icons/check-all-big.svg") center / 12px no-repeat $secondary-light-blue;
-                        }
-                    }
-
-                    .unread {
-                        &::before {
-                            content: "";
-                            position: relative;
-                            display: inline-block;
-                            top: 4px;
-                            width: 12px;
-                            height: 12px;
-                            background: url("../../assets/icons/check-big.svg") center / 12px no-repeat $secondary-light-blue;
-                        }
-                    }
-                }
-
-                .attached {
-                    background-color: transparent;
-                    border: 1px solid $secondary-light-gray;
-                }
-            }
-        }
-
-        .attach-block {
-            position: absolute;
-            display: flex;
-            padding: 15px;
-            bottom: 55px;
-            left: 10px;
-            width: 165px;
-            height: 130px;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: $shadow;
-            border-radius: 12px;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 14px;
-            color: $primary-color;
-            z-index: 1000;
-            box-sizing: border-box;
-
-            button {
-                display: flex;
-                padding: 0;
-                margin: 0;
-                flex-direction: row;
-                align-items: center;
-                border: none;
-                background-color: $white;
-                cursor: pointer;
-
-
-                span {
-                    display: flex;
-                    margin-right: 10px;
-                    width: 22px;
-                    height: 22px;
-                }
-
-                .photo {
-                    background: url("../../assets/icons/image-blue.svg") center / 22px no-repeat;
-                }
-
-                .file {
-                    background: url("../../assets/icons/file.svg") center / 22px no-repeat;
-                }
-
-                .location {
-                    background: url("../../assets/icons/location.svg") center / 22px no-repeat;
-                }
-            }
-        }
-
-        .new-message {
-            position: relative;
-            display: flex;
-            margin: auto 0 0;
-            padding: 10px 0 0;
-            align-items: center;
-            border-top: 1px solid $secondary-light-gray;
-
-            .attach {
-                width: 34px;
-                height: 34px;
-                border-radius: 17px;
-                margin: 0 10px 0 0;
-                padding: 0;
-                background: url("../../assets/icons/sattach.svg") center / 34px no-repeat;
-                border: none;
-                cursor: pointer;
-
-                &:hover {
-                    opacity: 0.7;
-                }
-            }
-
-            .chat-input {
-                padding: 10px 20px;
-                width: calc(100% - 38px);
-                font-weight: 500;
-                font-size: 12px;
-                line-height: 12px;
-                color: $gray;
-                background-color: $secondary-light-gray;
-                border: none;
-                border-radius: 16px;
-
-                &:focus {
-                    outline: 2px solid $gray;
-                }
-            }
-
-            .submit-button {
-                width: 28px;
-                height: 28px;
-                border-radius: 14px;
-                margin: 0 0 0 10px;
-                padding: 0;
-                background: url("../../assets/icons/arrow-left.svg") $blue center / 12px no-repeat;
-                transform: rotate(180deg);
-                border: none;
-                cursor: pointer;
-
-                &:hover {
-                    opacity: 0.7;
                 }
             }
         }

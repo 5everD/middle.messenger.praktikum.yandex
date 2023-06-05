@@ -13,8 +13,8 @@ type TData = {
     phone?: string,
 };
 
-const className: string = 'profile';
-export const content = (errors: TData, values: TData, edit: boolean, isDisabledForm: boolean) => ({
+const className = 'profile';
+export const content = (errors: TData, values: TData, edit: boolean, isFormDisabled: boolean) => ({
     edit,
     avatar: new Avatar({
         class: className,
@@ -102,7 +102,7 @@ export const content = (errors: TData, values: TData, edit: boolean, isDisabledF
         class: edit ? '' : 'display-none',
         text: 'Сохранить',
         form: 'profile',
-        disabled: isDisabledForm,
+        disabled: isFormDisabled,
     }).render(),
 
     linkExit: new Link({

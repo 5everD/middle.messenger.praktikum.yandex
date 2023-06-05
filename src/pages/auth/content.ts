@@ -8,7 +8,7 @@ type TData = {
     password?: string,
 }
 
-export const content = (errors: TData, values: TData) => ({
+export const content = (errors: TData, values: TData, isFormDisabled: boolean) => ({
     title: new Title({
         class: 'auth',
         title: 'Вход',
@@ -34,6 +34,7 @@ export const content = (errors: TData, values: TData) => ({
 
     button: new Button({
         text: 'Авторизоваться',
+        disabled: isFormDisabled,
     }).render(),
 
     link: new Link({
