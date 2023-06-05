@@ -1,7 +1,7 @@
-import Button from "../../components/button";
-import Input from "../../components/input";
-import Link from "../../components/link";
-import Title from "../../components/title";
+import Button from '../../components/button';
+import Input from '../../components/input';
+import Link from '../../components/link';
+import Title from '../../components/title';
 
 type TData = {
     email?: string;
@@ -13,84 +13,83 @@ type TData = {
     repeatPassword?: string,
 }
 
-const className = "registration"
+const className = 'registration';
 
 export const content = (errors: TData, values: TData) => ({
     title: new Title({
         class: className,
-        title: "Регистрация",
+        title: 'Регистрация',
     }).render(),
 
     inputEmail: new Input({
         class: className,
-        name: "email",
-        label: "Почта",
+        name: 'email',
+        label: 'Почта',
         value: values.email,
         errorText: errors.email,
-        type: "email",
+        type: 'email',
     }).render(),
 
     inputLogin: new Input({
         class: className,
-        name: "login",
-        label: "Логин",
+        name: 'login',
+        label: 'Логин',
         value: values.login,
         errorText: errors.login,
-        type: "text",
+        type: 'text',
     }).render(),
 
     inputFirst: new Input({
         class: className,
-        name: "first_name",
-        label: "Имя",
+        name: 'first_name',
+        label: 'Имя',
         value: values.first_name,
         errorText: errors.first_name,
-        type: "text",
+        type: 'text',
     }).render(),
 
     inputSecond: new Input({
         class: className,
-        name: "second_name",
-        label: "Фамилия",
+        name: 'second_name',
+        label: 'Фамилия',
         value: values.second_name,
         errorText: errors.second_name,
-        type: "text",
+        type: 'text',
     }).render(),
 
     inputPhone: new Input({
         class: className,
-        name: "phone",
-        label: "Телефон",
+        name: 'phone',
+        label: 'Телефон',
         value: values.phone,
         errorText: errors.phone,
-        type: "tel",
+        type: 'tel',
     }).render(),
 
     inputPassword: new Input({
         class: className,
-        name: "password",
-        label: "Пароль",
+        name: 'password',
+        label: 'Пароль',
         value: values.password,
         errorText: errors.password,
-        type: "password",
+        type: 'password',
     }).render(),
 
     inputRepeatPassword: new Input({
         class: className,
-        name: "repeatPassword",
-        label: "Пароль (еще раз)",
+        name: 'repeatPassword',
+        label: 'Пароль (еще раз)',
         value: values.repeatPassword,
         errorText: errors.repeatPassword,
-        type: "password",
+        type: 'password',
     }).render(),
 
-
     button: new Button({
-        text: "Зарегистрироваться",
+        text: 'Зарегистрироваться',
     }).render(),
 
     link: new Link({
-        href: "/auth",
-        text: "Войти",
+        href: '/auth',
+        text: 'Войти',
     }).render(),
 });

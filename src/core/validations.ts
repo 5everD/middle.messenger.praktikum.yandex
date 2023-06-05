@@ -60,56 +60,56 @@ export function validation() {
     const errors: TValidationsData = {};
     const values: TValidationsData = {};
     const formState: TFormState = {
-        disabled: false
+        disabled: false,
     };
 
     const _setValues = (newValues: TValidationsData = {}) => {
         // @ts-ignore
         Object.entries(newValues).forEach(([key, value]: [TKeys, string]) => {
             values[key] = value;
-        })
+        });
     };
 
     const _setErrors = (values: TValidationsData = {}) => {
         // @ts-ignore
         Object.entries(values).forEach(([key, value]: [TKeys, string]) => {
             switch (key) {
-                case 'login':
-                    errors[key] = isValidLogin(value);
-                    break;
-                case 'password':
-                    errors[key] = isValidPassword(value);
-                    break;
-                case 'oldPassword':
-                    errors[key] = isValidPassword(value);
-                    break;
-                case 'newPassword':
-                    errors[key] = isValidPassword(value);
-                    break;
-                case 'repeatPassword':
-                    errors[key] = isValidPassword(value);
-                    break;
-                case 'first_name':
-                    errors[key] = isValidName(value);
-                    break;
-                case 'second_name':
-                    errors[key] = isValidName(value);
-                    break;
-                case 'email':
-                    errors[key] = isValidEmail(value);
-                    break;
-                case 'phone':
-                    errors[key] = isValidPhone(value);
-                    break;
-                case 'message':
-                    errors[key] = isValidMessage(value);
-                    break;
+            case 'login':
+                errors[key] = isValidLogin(value);
+                break;
+            case 'password':
+                errors[key] = isValidPassword(value);
+                break;
+            case 'oldPassword':
+                errors[key] = isValidPassword(value);
+                break;
+            case 'newPassword':
+                errors[key] = isValidPassword(value);
+                break;
+            case 'repeatPassword':
+                errors[key] = isValidPassword(value);
+                break;
+            case 'first_name':
+                errors[key] = isValidName(value);
+                break;
+            case 'second_name':
+                errors[key] = isValidName(value);
+                break;
+            case 'email':
+                errors[key] = isValidEmail(value);
+                break;
+            case 'phone':
+                errors[key] = isValidPhone(value);
+                break;
+            case 'message':
+                errors[key] = isValidMessage(value);
+                break;
             }
         });
     };
 
     const _setDisabledForm = () => {
-        formState.disabled = Object.values(errors).some(err => err.length !== 0);
+        formState.disabled = Object.values(errors).some((err) => err.length !== 0);
     };
 
     const init = (initValues: TValidationsData = {}): void => {
@@ -134,18 +134,20 @@ export function validation() {
         const inputsNodeList = elem.querySelectorAll('input');
         const inputs: HTMLInputElement[] = Array.from(inputsNodeList);
         const formValues: Record<string, string> = {};
-        inputs.forEach(input => {
-            formValues[input.name] = input.value
-        })
+        inputs.forEach((input) => {
+            formValues[input.name] = input.value;
+        });
         return formValues;
     };
 
     const _getInputData = (elem: HTMLInputElement) => {
-        const {name, value} = elem;
+        const { name, value } = elem;
         const valueObj: Record<string, string> = {};
         valueObj[name] = value;
         return valueObj;
     };
 
-    return {errors, values, formState, init, onChangeValues};
+    return {
+        errors, values, formState, init, onChangeValues,
+    };
 }

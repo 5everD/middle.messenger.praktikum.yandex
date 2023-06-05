@@ -1,13 +1,12 @@
-import template from "./change-password.hbs";
-import Block from "../../core/Block";
-import Link from "../../components/link";
-import Input from "../../components/input";
-import Title from "../../components/title";
-import {validation} from "../../core/validations";
-import {content} from "./content";
+import template from './change-password.hbs';
+import Block from '../../core/Block';
+import Link from '../../components/link';
+import Input from '../../components/input';
+import Title from '../../components/title';
+import { validation } from '../../core/validations';
+import { content } from './content';
 
 import './style.scss';
-
 
 type TProps = {
     events: Record<string, (event: Event) => void>,
@@ -26,11 +25,11 @@ const changePWD = () => {
                 class: 'change-password',
                 name: 'change-password',
             });
-        };
+        }
 
         render() {
-            return template({...this.props});
-        };
+            return template({ ...this.props });
+        }
     }
 
     function handleSubmit(event: Event) {
@@ -38,16 +37,16 @@ const changePWD = () => {
         const form = event.target as HTMLElement;
         onChangeValues(form);
         page.setProps(
-            content(errors, values)
-        )
+            content(errors, values),
+        );
     }
 
-    function handleBlurOrFocus( event: Event ) {
+    function handleBlurOrFocus(event: Event) {
         const input = event.target as HTMLElement;
         onChangeValues(input);
         page.setProps(
-            content(errors, values)
-        )
+            content(errors, values),
+        );
     }
 
     const page = new ChangePWD({
@@ -56,10 +55,10 @@ const changePWD = () => {
             blur: handleBlurOrFocus,
             focus: handleBlurOrFocus,
         },
-        ...content(errors, values)
+        ...content(errors, values),
     });
 
-    return page
-}
+    return page;
+};
 
 export default changePWD;

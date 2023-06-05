@@ -1,5 +1,5 @@
-import Block from "../../core/Block";
-import template from "./avatar.hbs";
+import Block from '../../core/Block';
+import template from './avatar.hbs';
 
 type TProps = {
     class: string,
@@ -8,7 +8,7 @@ type TProps = {
 
 class Avatar extends Block<TProps> {
     constructor(props: TProps) {
-        super(props, 'div', {class: props.class + '__avatar'});
+        super(props, 'div', { class: `${props.class}__avatar` });
     }
 
     render() {

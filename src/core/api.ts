@@ -13,35 +13,29 @@ function queryStringify(data: Record<string, unknown>) {
     }
 
     return Object.entries(data).reduce((res, [key, value], i) => {
-        if (i === 0) return '?' + key + '=' + value
-        else return res + '&' + key + '=' + value
-    }, '')
+        if (i === 0) return `?${key}=${value}`;
+        return `${res}&${key}=${value}`;
+    }, '');
 }
 
 export class HTTPTransport {
-    get = (url: string, options: Options = {method: 'GET'}) => {
-        const {data} = options;
+    get = (url: string, options: Options = { method: 'GET' }) => {
+        const { data } = options;
         if (data && Object.keys(data).length > 0 && !(data instanceof FormData)) url += queryStringify(data);
-        return this.request(url, {...options, method: 'GET'}, options.timeout);
+        return this.request(url, { ...options, method: 'GET' }, options.timeout);
     };
 
-    put = (url: string, options: Options = {method: 'GET'}) => {
-        return this.request(url, {...options, method: 'PUT'}, options.timeout);
-    };
+    put = (url: string, options: Options = { method: 'GET' }) => this.request(url, { ...options, method: 'PUT' }, options.timeout);
 
-    post = (url: string, options: Options = {method: 'POST'}) => {
-        return this.request(url, {...options, method: 'POST'}, options.timeout);
-    };
+    post = (url: string, options: Options = { method: 'POST' }) => this.request(url, { ...options, method: 'POST' }, options.timeout);
 
-    delete = (url: string, options: Options = {method: 'DELETE'}) => {
-        return this.request(url, {
-            ...options,
-            method: 'DELETE'
-        }, options.timeout);
-    };
+    delete = (url: string, options: Options = { method: 'DELETE' }) => this.request(url, {
+        ...options,
+        method: 'DELETE',
+    }, options.timeout);
 
-    request = (url: string, options: Options = {method: 'GET'}, timeout = 5000) => {
-        const {method, data, headers = {}} = options;
+    request = (url: string, options: Options = { method: 'GET' }, timeout = 5000) => {
+        const { method, data, headers = {} } = options;
 
         return new Promise((resolve, reject) => {
             if (!method) {
@@ -50,9 +44,9 @@ export class HTTPTransport {
             }
             const xhr = new XMLHttpRequest();
             xhr.open(method, url);
-            xhr.withCredentials = true
+            xhr.withCredentials = true;
 
-            Object.keys(headers).forEach(key => {
+            Object.keys(headers).forEach((key) => {
                 xhr.setRequestHeader(key, headers[key]);
             });
 

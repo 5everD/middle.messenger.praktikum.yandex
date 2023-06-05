@@ -1,10 +1,9 @@
-import template from "./error.hbs";
-import Block from "../../core/Block";
-import Link from "../../components/link";
-import Text from "../../components/text";
-import Title from "../../components/title";
-import './style.scss'
-
+import template from './error.hbs';
+import Block from '../../core/Block';
+import Link from '../../components/link';
+import Text from '../../components/text';
+import Title from '../../components/title';
+import './style.scss';
 
 type TProps = {
     title: Title
@@ -15,7 +14,7 @@ type TProps = {
 class Error extends Block {
     constructor(props: TProps) {
         super(props, 'section', {
-            class: 'error'
+            class: 'error',
         });
     }
 
@@ -26,31 +25,30 @@ class Error extends Block {
 
 export const page404 = new Error({
     title: new Title({
-        title: "404",
-        class: "error"
+        title: '404',
+        class: 'error',
     }).render(),
     text: new Text({
-        class: "error",
-        text: "Не туда попали"
+        class: 'error',
+        text: 'Не туда попали',
     }).render(),
     link: new Link({
-        href: "/",
-        text: "Назад к чатам",
-    }).render()
+        href: '/',
+        text: 'Назад к чатам',
+    }).render(),
 });
 
 export const page500 = new Error({
     title: new Title({
-        title: "500",
-        class: "error"
+        title: '500',
+        class: 'error',
     }).render(),
     text: new Text({
-        class: "error",
-        text: "Мы уже фиксим"
+        class: 'error',
+        text: 'Мы уже фиксим',
     }).render(),
     link: new Link({
-        href: "/",
-        text: "Назад к чатам"
-    }).render()
+        href: '/',
+        text: 'Назад к чатам',
+    }).render(),
 });
-

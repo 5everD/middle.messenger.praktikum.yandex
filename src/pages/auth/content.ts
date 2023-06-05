@@ -1,7 +1,7 @@
-import Button from "../../components/button";
-import Input from "../../components/input";
-import Link from "../../components/link";
-import Title from "../../components/title";
+import Button from '../../components/button';
+import Input from '../../components/input';
+import Link from '../../components/link';
+import Title from '../../components/title';
 
 type TData = {
     login?: string,
@@ -10,34 +10,34 @@ type TData = {
 
 export const content = (errors: TData, values: TData) => ({
     title: new Title({
-        class: "auth",
-        title: "Вход",
+        class: 'auth',
+        title: 'Вход',
     }).render(),
 
     inputLogin: new Input({
-        class: "auth",
-        name: "login",
-        label: "Логин",
+        class: 'auth',
+        name: 'login',
+        label: 'Логин',
         value: values.login,
         errorText: errors.login,
-        type: "text",
+        type: 'text',
     }).render(),
 
     inputPassword: new Input({
-        class: "auth",
-        name: "password",
-        label: "Пароль",
+        class: 'auth',
+        name: 'password',
+        label: 'Пароль',
         value: values.password,
         errorText: errors.password,
-        type: "password",
+        type: 'password',
     }).render(),
 
     button: new Button({
-        text: "Авторизоваться",
+        text: 'Авторизоваться',
     }).render(),
 
     link: new Link({
-        href: "registration",
-        text: "Нет аккаунта?",
+        href: 'registration',
+        text: 'Нет аккаунта?',
     }).render(),
 });

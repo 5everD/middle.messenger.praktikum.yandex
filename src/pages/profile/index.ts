@@ -1,15 +1,14 @@
-import template from "./profile.hbs";
-import Block from "../../core/Block";
-import Link from "../../components/link";
-import Input from "../../components/input";
-import Title from "../../components/title";
-import Avatar from "../../components/avatar";
-import Button from "../../components/button";
-import {validation} from "../../core/validations";
-import {content} from "./content";
+import template from './profile.hbs';
+import Block from '../../core/Block';
+import Link from '../../components/link';
+import Input from '../../components/input';
+import Title from '../../components/title';
+import Avatar from '../../components/avatar';
+import Button from '../../components/button';
+import { validation } from '../../core/validations';
+import { content } from './content';
 
-import './style.scss'
-
+import './style.scss';
 
 export type TProps = {
     events: Record<string, (event: Event) => void>,
@@ -28,7 +27,9 @@ export type TProps = {
 }
 
 const profilePage = (edit: boolean = false) => {
-    const {errors, values, init: initValidator, formState, onChangeValues} = validation();
+    const {
+        errors, values, init: initValidator, formState, onChangeValues,
+    } = validation();
 
     const initValues = {
         email: 'pochta@yandex.ru',
@@ -46,22 +47,22 @@ const profilePage = (edit: boolean = false) => {
             super(props, 'div', {
                 class: 'inner',
             });
-        };
+        }
 
         render() {
-            return template({...this.props});
-        };
+            return template({ ...this.props });
+        }
     }
 
     function handleChange(event: Event) {
-        const target = event.target as HTMLElement
+        const target = event.target as HTMLElement;
 
         if (target.className === 'link edit') {
             edit = true;
         }
 
         page.setProps(
-            content(errors, values, edit, formState.disabled)
+            content(errors, values, edit, formState.disabled),
         );
     }
 
@@ -71,11 +72,11 @@ const profilePage = (edit: boolean = false) => {
         onChangeValues(form);
 
         if (!formState.disabled) {
-            edit = false
+            edit = false;
         }
 
         page.setProps(
-            content(errors, values, edit, formState.disabled)
+            content(errors, values, edit, formState.disabled),
         );
     }
 
@@ -83,7 +84,7 @@ const profilePage = (edit: boolean = false) => {
         const input = event.target as HTMLElement;
         onChangeValues(input);
         page.setProps(
-            content(errors, values, edit, formState.disabled)
+            content(errors, values, edit, formState.disabled),
         );
     }
 
@@ -94,7 +95,7 @@ const profilePage = (edit: boolean = false) => {
             focus: handleBlurOrFocus,
             click: handleChange,
         },
-        ...content(errors, values, edit, formState.disabled)
+        ...content(errors, values, edit, formState.disabled),
     });
 
     return page;

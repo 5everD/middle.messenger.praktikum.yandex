@@ -1,5 +1,5 @@
-import Block from "../../core/Block";
-import template from "./button.hbs";
+import Block from '../../core/Block';
+import template from './button.hbs';
 
 type TProps = {
     class?: string,

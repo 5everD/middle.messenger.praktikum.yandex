@@ -1,5 +1,5 @@
-import Block from "../../core/Block";
-import template from "./input.hbs";
+import Block from '../../core/Block';
+import template from './input.hbs';
 
 type TProps = {
     class: string,
@@ -17,7 +17,7 @@ class Input extends Block<TProps> {
     }
 
     render() {
-        return template({...this.props});
+        return template({ ...this.props });
     }
 }
 

@@ -1,9 +1,8 @@
-import Avatar from "../../components/avatar";
-import Button from "../../components/button";
-import Input from "../../components/input";
-import Link from "../../components/link";
-import Title from "../../components/title";
-
+import Avatar from '../../components/avatar';
+import Button from '../../components/button';
+import Input from '../../components/input';
+import Link from '../../components/link';
+import Title from '../../components/title';
 
 type TData = {
     email?: string,
@@ -14,24 +13,24 @@ type TData = {
     phone?: string,
 };
 
-const className: string = "profile"
+const className: string = 'profile';
 export const content = (errors: TData, values: TData, edit: boolean, isDisabledForm: boolean) => ({
-    edit: edit,
+    edit,
     avatar: new Avatar({
         class: className,
-        image: ""
+        image: '',
     }).render(),
 
     title: new Title({
         class: className,
-        title: values.display_name || values.first_name || "Пользователь",
+        title: values.display_name || values.first_name || 'Пользователь',
     }).render(),
 
     inputEmail: new Input({
         class: className,
-        type: "email",
-        name: "email",
-        label: "Почта",
+        type: 'email',
+        name: 'email',
+        label: 'Почта',
         value: values.email,
         errorText: errors.email,
         disabled: !edit,
@@ -39,9 +38,9 @@ export const content = (errors: TData, values: TData, edit: boolean, isDisabledF
 
     inputLogin: new Input({
         class: className,
-        type: "text",
-        name: "login",
-        label: "Логин",
+        type: 'text',
+        name: 'login',
+        label: 'Логин',
         value: values.login,
         errorText: errors.login,
         disabled: !edit,
@@ -49,9 +48,9 @@ export const content = (errors: TData, values: TData, edit: boolean, isDisabledF
 
     inputFirst: new Input({
         class: className,
-        type: "text",
-        name: "first_name",
-        label: "Имя",
+        type: 'text',
+        name: 'first_name',
+        label: 'Имя',
         value: values.first_name,
         errorText: errors.first_name,
         disabled: !edit,
@@ -59,9 +58,9 @@ export const content = (errors: TData, values: TData, edit: boolean, isDisabledF
 
     inputSecond: new Input({
         class: className,
-        type: "text",
-        name: "second_name",
-        label: "Фамилия",
+        type: 'text',
+        name: 'second_name',
+        label: 'Фамилия',
         value: values.second_name,
         errorText: errors.second_name,
         disabled: !edit,
@@ -69,9 +68,9 @@ export const content = (errors: TData, values: TData, edit: boolean, isDisabledF
 
     inputDisplayName: new Input({
         class: className,
-        type: "text",
-        name: "display_name",
-        label: "Имя в чате",
+        type: 'text',
+        name: 'display_name',
+        label: 'Имя в чате',
         value: values.display_name,
         errorText: errors.display_name,
         disabled: !edit,
@@ -79,36 +78,36 @@ export const content = (errors: TData, values: TData, edit: boolean, isDisabledF
 
     inputPhone: new Input({
         class: className,
-        type: "tel",
-        name: "phone",
-        label: "Телефон",
+        type: 'tel',
+        name: 'phone',
+        label: 'Телефон',
         value: values.phone,
         errorText: errors.phone,
         disabled: !edit,
     }).render(),
 
     linkChangeData: new Link({
-        class: edit ? "display-none" : "link edit",
-        href: "#",
-        text: "Изменить данные",
+        class: edit ? 'display-none' : 'link edit',
+        href: '#',
+        text: 'Изменить данные',
     }).render(),
 
     linkChangePass: new Link({
-        class: !edit ? "link" : "display-none",
-        href: "/change-password",
-        text: "Изменить пароль",
+        class: !edit ? 'link' : 'display-none',
+        href: '/change-password',
+        text: 'Изменить пароль',
     }).render(),
 
     button: new Button({
-        class: edit ? "" : "display-none",
-        text: "Сохранить",
-        form: "profile",
+        class: edit ? '' : 'display-none',
+        text: 'Сохранить',
+        form: 'profile',
         disabled: isDisabledForm,
     }).render(),
 
     linkExit: new Link({
-        class: "link logout",
-        href: "/auth",
-        text: "Выйти",
-    }).render()
+        class: 'link logout',
+        href: '/auth',
+        text: 'Выйти',
+    }).render(),
 });

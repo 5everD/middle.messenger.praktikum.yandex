@@ -1,6 +1,5 @@
-import template from "./main.hbs";
-import Block from "../../core/Block";
-
+import template from './main.hbs';
+import Block from '../../core/Block';
 
 type link = {
     href: string;
@@ -14,7 +13,7 @@ type TProps = {
 class Main extends Block {
     constructor(props: TProps) {
         super(props, 'nav', {
-            class: "menu"
+            class: 'menu',
         });
     }
 
@@ -24,14 +23,14 @@ class Main extends Block {
 }
 
 const pages = [
-    { href: "/auth", text: "Войти" },
-    { href: "/registration", text: "Зарегистрироваться" },
-    { href: "/change-password", text: "Поменять пароль" },
-    { href: "/profile", text: "Профиль" },
-    { href: "/chat", text: "Чат" },
-    { href: "/404", text: "404" },
-    { href: "/500", text: "500" },
-]
-const main = new Main({pages});
+    { href: '/auth', text: 'Войти' },
+    { href: '/registration', text: 'Зарегистрироваться' },
+    { href: '/change-password', text: 'Поменять пароль' },
+    { href: '/profile', text: 'Профиль' },
+    { href: '/chat', text: 'Чат' },
+    { href: '/404', text: '404' },
+    { href: '/500', text: '500' },
+];
+const main = new Main({ pages });
 
 export default main;

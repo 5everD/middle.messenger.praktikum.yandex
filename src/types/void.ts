@@ -1,1 +1,1 @@
-export type TFVoid = ( ...args: unknown[] ) => void;
+export type TFVoid = (...args: unknown[]) => void;

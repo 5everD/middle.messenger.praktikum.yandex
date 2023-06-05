@@ -1,5 +1,5 @@
-import Block from "../../core/Block";
-import template from "./link.hbs";
+import Block from '../../core/Block';
+import template from './link.hbs';
 
 interface TProps {
     class?: string,
@@ -7,7 +7,7 @@ interface TProps {
     text: string,
 }
 
-class Link extends Block{
+class Link extends Block {
     constructor(props: TProps) {
         super(props);
     }

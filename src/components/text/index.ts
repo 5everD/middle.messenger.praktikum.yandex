@@ -1,5 +1,5 @@
-import Block from "../../core/Block";
-import template from "./text.hbs";
+import Block from '../../core/Block';
+import template from './text.hbs';
 
 type TProps = {
     text: string,

@@ -1,13 +1,12 @@
-import template from "./auth.hbs";
-import Block from "../../core/Block";
-import Link from "../../components/link";
-import Input from "../../components/input";
-import Title from "../../components/title";
-import {validation} from "../../core/validations";
-import {content} from "./content";
+import template from './auth.hbs';
+import Block from '../../core/Block';
+import Link from '../../components/link';
+import Input from '../../components/input';
+import Title from '../../components/title';
+import { validation } from '../../core/validations';
+import { content } from './content';
 
 import './style.scss';
-
 
 type TProps = {
     events: Record<string, (event: Event) => void>,
@@ -18,7 +17,7 @@ type TProps = {
 }
 
 const authPage = () => {
-    const {errors, values, onChangeValues} = validation();
+    const { errors, values, onChangeValues } = validation();
 
     class Auth extends Block {
         constructor(props: TProps) {
@@ -26,11 +25,11 @@ const authPage = () => {
                 class: 'auth',
                 name: 'auth',
             });
-        };
+        }
 
         render() {
-            return template({...this.props});
-        };
+            return template({ ...this.props });
+        }
     }
 
     function handleSubmit(event: Event) {
@@ -38,7 +37,7 @@ const authPage = () => {
         const form = event.target as HTMLElement;
         onChangeValues(form);
         page.setProps(
-            content(errors, values)
+            content(errors, values),
         );
     }
 
@@ -46,7 +45,7 @@ const authPage = () => {
         const input = event.target as HTMLElement;
         onChangeValues(input);
         page.setProps(
-            content(errors, values)
+            content(errors, values),
         );
     }
 
@@ -56,10 +55,10 @@ const authPage = () => {
             blur: handleBlurOrFocus,
             focus: handleBlurOrFocus,
         },
-        ...content(errors, values)
+        ...content(errors, values),
     });
 
     return page;
-}
+};
 
 export default authPage;

@@ -1,13 +1,12 @@
-import template from "./registration.hbs";
-import Block from "../../core/Block";
-import Link from "../../components/link";
-import Input from "../../components/input";
-import Title from "../../components/title";
-import {validation} from "../../core/validations";
-import {content} from "./content";
+import template from './registration.hbs';
+import Block from '../../core/Block';
+import Link from '../../components/link';
+import Input from '../../components/input';
+import Title from '../../components/title';
+import { validation } from '../../core/validations';
+import { content } from './content';
 
-import './style.scss'
-
+import './style.scss';
 
 type TProps = {
     events: Record<string, (event: Event) => void>,
@@ -22,20 +21,19 @@ type TProps = {
     inputRepeatPassword: Input,
 }
 
-
 const registrationPage = () => {
-    const {errors, values, onChangeValues} = validation();
+    const { errors, values, onChangeValues } = validation();
     class Registration extends Block {
         constructor(props: TProps) {
             super(props, 'form', {
                 class: 'registration',
                 name: 'registration',
             });
-        };
+        }
 
         render() {
-            return template({...this.props});
-        };
+            return template({ ...this.props });
+        }
     }
 
     function handleSubmit(event: Event) {
@@ -43,7 +41,7 @@ const registrationPage = () => {
         const form = event.target as HTMLElement;
         onChangeValues(form);
         page.setProps(
-            content(errors, values)
+            content(errors, values),
         );
     }
 
@@ -51,7 +49,7 @@ const registrationPage = () => {
         const input = event.target as HTMLElement;
         onChangeValues(input);
         page.setProps(
-            content(errors, values)
+            content(errors, values),
         );
     }
 
@@ -61,13 +59,10 @@ const registrationPage = () => {
             blur: handleBlurOrFocus,
             focus: handleBlurOrFocus,
         },
-        ...content(errors, values)
+        ...content(errors, values),
     });
 
     return page;
-
 };
 
 export default registrationPage;
-
-

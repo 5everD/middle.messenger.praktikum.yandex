@@ -1,12 +1,13 @@
-import template from "./chat.hbs";
-import Block from "../../core/Block";
-import Link from "../../components/link";
-import {massages, name, massage, TMassages, TMassage} from "./data";
-import {validation} from "../../core/validations";
-import {content} from "./content";
+import template from './chat.hbs';
+import Block from '../../core/Block';
+import Link from '../../components/link';
+import {
+    massages, name, massage, TMassages, TMassage,
+} from './data';
+import { validation } from '../../core/validations';
+import { content } from './content';
 
-import "./style.scss"
-
+import './style.scss';
 
 type TChatProps = {
     events: Record<string, (event: Event) => void>,
@@ -17,13 +18,13 @@ type TChatProps = {
 }
 
 const chatPage = () => {
-    const { errors, /*values,*/ formState, /*init: validatorInit,*/ onChangeValues } = validation();
+    const { errors, /* values, */ formState, /* init: validatorInit, */ onChangeValues } = validation();
 
     class ChatPage extends Block {
         constructor(props: TChatProps) {
             super(props, 'div', {
-                class: 'inner'
-            })
+                class: 'inner',
+            });
         }
 
         render() {
@@ -31,19 +32,19 @@ const chatPage = () => {
         }
     }
 
-    function handleClick(event: Event) { //TODO
-        const target = event.target as HTMLElement
+    function handleClick(event: Event) { // TODO
+        const target = event.target as HTMLElement;
 
         if (target.className === 'link edit') {
             // edit = true;
         }
 
         page.setProps(
-            content(errors, name, massage, massages)
+            content(errors, name, massage, massages),
         );
     }
 
-    function handleSubmit(event: Event) { //TODO
+    function handleSubmit(event: Event) { // TODO
         event.preventDefault();
         const form = event.target as HTMLElement;
         onChangeValues(form);
@@ -53,15 +54,15 @@ const chatPage = () => {
         }
 
         page.setProps(
-            content(errors, name, massage, massages)
+            content(errors, name, massage, massages),
         );
     }
 
-    function handleBlurOrFocus(event: Event) { //TODO
+    function handleBlurOrFocus(event: Event) { // TODO
         const input = event.target as HTMLElement;
         onChangeValues(input);
         page.setProps(
-            content(errors, name, massage, massages)
+            content(errors, name, massage, massages),
         );
     }
 
@@ -72,7 +73,7 @@ const chatPage = () => {
             focus: handleBlurOrFocus,
             click: handleClick,
         },
-        ...content(errors, name, massage, massages)
+        ...content(errors, name, massage, massages),
     });
 
     return page;
