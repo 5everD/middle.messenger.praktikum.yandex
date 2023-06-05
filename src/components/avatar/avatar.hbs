@@ -1,4 +1,11 @@
 <div class="{{class}}__avatar">
+    {{#if image}}
+        <img
+            class="{{class}}__img"
+            src="{{image}}"
+            alt="Аватар пользователя"
+        />
+    {{/if}}
     <div class="{{class}}__overlay">
         <p>Поменять аватар</p>
     </div>

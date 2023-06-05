@@ -1,67 +1,20 @@
----
-name: "Иван"
----
-<link rel="stylesheet" href="style.scss" />
-<main class="container">
-    <aside class="profile__aside">
-        <button type="reset">
-        </button>
-    </aside>
-    <section class="profile">
-        {{>  avatar/avatar class="profile" }}
-        <h1 class="profile__title">{{name}}</h1>
-        <form class="profile__form">
-            {{> input/profile
-                    class="profile"
-                    name="email"
-                    label="Почта"
-                    value="pochta@yandex.ru"
-                    type="email"
-                    disabled="disabled"
-            }}
-            {{> input/profile
-                    class="profile"
-                    name="login"
-                    label="Логин"
-                    value="ivanivanov"
-                    type="text"
-                    disabled="disabled"
-            }}
-            {{> input/profile
-                    class="profile"
-                    name="first_name"
-                    label="Имя"
-                    value="Иван"
-                    type="text"
-                    disabled="disabled"
-            }}
-            {{> input/profile
-                    class="profile"
-                    name="second_name"
-                    label="Фамилия"
-                    value="Иванов"
-                    type="text"
-                    disabled="disabled"
-            }}
-            {{> input/profile
-                    class="profile"
-                    name="display_name"
-                    label="Имя в чате"
-                    value="Иван"
-                    type="text"
-                    disabled="disabled"
-            }}
-            {{> input/profile
-                    class="profile"
-                    name="phone"
-                    label="Телефон"
-                    value="+7 (909) 967 30 30"
-                    type="tel"
-                    disabled="disabled"
-            }}
-        </form>
-        {{> link/link href="#" text="Изменить данные" }}
-        {{> link/link href="../auth/change-password.hbs" text="Изменить пароль" }}
-        {{> link/link class="link logout" href="../auth/auth.hbs" text="Выйти" }}
-    </section>
-</main>
+<aside class="profile__aside">
+    <button type="reset">
+    </button>
+</aside>
+<section class="profile">
+    {{{avatar}}}
+    {{{title}}}
+    <form class="profile__form">
+        {{{inputEmail}}}
+        {{{inputLogin}}}
+        {{{inputFirst}}}
+        {{{inputSecond}}}
+        {{{inputDisplayName}}}
+        {{{inputPhone}}}
+        {{{button}}}
+    </form>
+    {{{linkChangeData}}}
+    {{{linkChangePass}}}
+    {{{linkExit}}}
+</section>
