@@ -1,90 +1,125 @@
-    <aside class="chat__aside">
-        {{{link}}}
-        <input type="text" placeholder="Поиск" />
-        <nav>
-            <ul class="side-ul">
-                {{#each massages}}
-                    <li>
-                        <div class="side-massage{{#if selected}} selected{{/if}} ">
-                            <div class="avatar-wrapper">
-                                {{#if this.avatarLink}}
-                                    <img
-                                        class="massages-avatar"
-                                        src="{{this.avatarLink}}"
-                                        alt="Аватар пользователя"
-                                    />
-                                {{/if}}
-                            </div>
-                            <div>
-                                <h3 class="name">{{name}}</h3>
-                                <p class="massage">
-                                    {{#if my}}<span>Вы: </span>{{/if}}
-                                    {{text}}
-                                </p>
-                            </div>
-                            <p class="time">{{time}}</p>
-                            {{#if count}}<p class="count">{{count}}</p>{{/if}}
-                        </div>
-                    </li>
-                {{/each}}
-            </ul>
-        </nav>
-    </aside>
-    <section class="chat__section">
-        <div class="chat-user">
-            <div class="avatar-wrapper"></div>
-            <h3 class="name">{{name}}</h3>
-            <button class="more">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </button>
-            <div class="more-block">
-                <button class="more-block__add" type="button">
-                    <span class="cross"></span>
-                    Добавить пользователя
-                </button>
-                <button class="more-block__delete" type="button">
-                    <span class="cross"></span>
-                    Удалить пользователя
-                </button>
-            </div>
-        </div>
-        <ul class="chat-board">
-            {{#each massage}}
+<aside class="chat__aside">
+    <button type="button" class="add-chat" id="addChat" title="Создать чат">
+        <span class="cross" id="addChat"></span>
+    </button>
+    {{{link}}}
+    <input type="text" placeholder="Поиск"/>
+    <nav>
+        <ul class="side-ul">
+            {{#each chats}}
                 <li>
-                    {{#if day}}
-                        <h5>{{day}}</h5>
-                    {{/if}}
-                    <div class="message{{#if my}} right{{/if}} {{#if attach}} attached{{/if}}">
-                        <p>{{text}}</p>
-                        {{#if attach}}
-                            <img class="attach" src="{{attach}}" alt="attach"/>
-                        {{/if}}
-                        <span class="time{{#if my}}{{#if read}} read{{else}} unread{{/if}}{{/if}}">
-                            {{time}}
-                        </span>
+                    <div class="side-massage{{#if
+                        this.selected}} selected{{/if}}"
+                         id="selectChat_{{this.id}}">
+                        <div class="avatar-wrapper">
+                            {{#if this.last_message.user.avatar}}
+                                <img
+                                    class="massages-avatar"
+                                    src="https://ya-praktikum.tech/api/v2/resources/{{this.last_message.user.avatar}}"
+                                    alt="Аватар пользователя"
+                                />
+                            {{/if}}
+                        </div>
+                        <div>
+                            <h3 class="name">{{this.title}}</h3>
+                            <p class="massage">
+                                {{#if this.last_message.isMy}}
+                                    <span>Вы: </span>{{/if}}
+                                {{this.last_message.content}}
+                            </p>
+                        </div>
+                        <p class="time">{{this.last_message.time}}</p>
+                        {{#if this.unread_count}}
+                            <p class="count">{{this.unread_count}}</p>{{/if}}
                     </div>
                 </li>
             {{/each}}
         </ul>
-        <div class="attach-block">
-            <button class="attach-block__image" type="button">
-                <span class="photo"></span>
-                Фото или Видео
-            </button>
-            <button class="attach-block__file" type="button">
-                <span class="file"></span>
-                Файл
-            </button>
-            <button class="attach-block__location" type="button">
-                <span class="location"></span>
-                Локация
-            </button>
+    </nav>
+</aside>
+<section class="chat__section">
+    <div class="chat-user">
+        <div class="avatar-wrapper">
+            {{#if currentChat.avatarLink}}
+                <img class="" src="{{currentChat.avatarLink}}"
+                     alt="Аватар пользователя"/>
+            {{/if}}
         </div>
-        <form class="new-message" name="new-message">
-            <button class="attach" type="button"></button>
-            <input class="chat-input" type="text" placeholder="Сообщение" name="message" id="message" />
-            <button class="submit-button" type="submit"></button>
-        </form>
-    </section>
+        <h3 class="name">{{currentChat.name}}</h3>
+        <button class="more" id="buttonOpenPopup">
+            <span class="dot" id="buttonOpenPopup"></span>
+            <span class="dot" id="buttonOpenPopup"></span>
+            <span class="dot" id="buttonOpenPopup"></span>
+        </button>
+        <ul class="more-block{{#if
+            isOpenChatUsersPopup}} more-block_opened{{/if}}">
+            <li id="addUser">
+                <button type="button" class="more-block__add" id="addUser">
+                    <span class="cross"></span>
+                    Добавить пользователя
+                </button>
+            </li>
+            <li id="removeUser">
+                <button type="button" class="more-block__remove"
+                        id="removeUser">
+                    <span class="remove"></span>
+                    Удалить пользователя
+                </button>
+            </li>
+        </ul>
+    </div>
+    <ul class="chat-board">
+        {{#each currentChat.messages}}
+            <li>
+                {{#if this.day}}
+                    <h5>{{this.day}}</h5>
+                {{/if}}
+                <div class="message{{#if this.isMy}} right{{/if}} {{#if
+                    file}} attached{{/if}}">
+                    <p>{{this.content}}</p>
+                    {{#if file}}
+                        <img class="attach" src="{{file}}" alt="attach"/>
+                    {{/if}}
+                    <span class="time{{#if this.isMy}}{{#if
+                        this.is_read}} read{{else}} unread{{/if}}{{/if}}">
+                        {{time}}
+                    </span>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+    <form class="new-message" name="new-message" id="newMessage">
+        {{#if error}}<span class="error">{{error}}</span>{{/if}}
+        <button class="attach" type="button"
+                id="buttonOpenAttachPopup"></button>
+        <ul class="attach-block{{#if
+            isOpenAttachPopup}} attach-block_opened{{/if}}">
+            <li id="addImage">
+                <button class="attach-block__image" type="button">
+                    <span class="photo"></span>
+                    Фото
+                </button>
+            </li>
+            <li id="addFile">
+                <button class="attach-block__file" type="button">
+                    <span class="file"></span>
+                    Файл
+                </button>
+            </li>
+            <li id="addLocation">
+                <button class="attach-block__location" type="button">
+                    <span class="location"></span>
+                    Локация
+                </button>
+            </li>
+        </ul>
+        <input class="chat-input" type="text" placeholder="Сообщение"
+               name="message" id="message"/>
+        <button class="submit-button" type="submit"
+                {{#if isDisabledFormMessage}}disabled{{/if}}></button>
+    </form>
+</section>
+{{{ popupAddUser }}}
+{{{ popupRemoveUser }}}
+{{{ popupAddChat }}}
+{{{ toolTip }}}

@@ -10,7 +10,7 @@ class Block<PropsType extends Record<string, any> = any> {
 
     protected props: PropsType;
 
-    protected isHidden: boolean;
+    public isHidden: boolean;
 
     private _element: HTMLElement;
 

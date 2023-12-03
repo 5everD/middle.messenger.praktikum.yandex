@@ -3,12 +3,17 @@ import Block from '../../core/Block';
 import Link from '../../components/link';
 import Text from '../../components/text';
 import Title from '../../components/title';
+import { Router } from "../../core/Router";
+import {TFVoid} from "../../types/void";
+
 import './style.scss';
+
 
 type TProps = {
     title: Title
     text: Text
     link: Link
+    events: Record<string, TFVoid>,
 }
 
 class Error extends Block {
@@ -23,6 +28,16 @@ class Error extends Block {
     }
 }
 
+const router = new Router();
+
+function handleClick(event: Event) {
+    const target = event.target as HTMLElement
+    if (target.className === 'link') {
+        event.preventDefault();
+        router.go("/messenger");
+    }
+}
+
 export const page404 = new Error({
     title: new Title({
         title: '404',
@@ -33,9 +48,12 @@ export const page404 = new Error({
         text: 'Не туда попали',
     }).render(),
     link: new Link({
-        href: '/',
+        href: '/messenger',
         text: 'Назад к чатам',
     }).render(),
+    events: {
+        click: handleClick
+    },
 });
 
 export const page500 = new Error({
@@ -48,7 +66,10 @@ export const page500 = new Error({
         text: 'Мы уже фиксим',
     }).render(),
     link: new Link({
-        href: '/',
+        href: '/messenger',
         text: 'Назад к чатам',
     }).render(),
+    events: {
+        click: handleClick
+    },
 });

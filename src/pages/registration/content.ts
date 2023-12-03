@@ -90,7 +90,7 @@ export const content = (errors: TData, values: TData, isFormDisabled: boolean) =
     }).render(),
 
     link: new Link({
-        href: '/auth',
+        href: '/',
         text: 'Войти',
     }).render(),
 });

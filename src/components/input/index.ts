@@ -9,6 +9,7 @@ type TProps = {
     disabled?: boolean,
     value?: string,
     errorText?: string,
+    accept?: string,
 }
 
 class Input extends Block<TProps> {
