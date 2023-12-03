@@ -1,3 +1,5 @@
+import { TResponse } from './routerTypes';
+
 type METHODS = 'GET' | 'PUT' | 'POST' | 'DELETE';
 
 type Options = {
@@ -70,4 +72,31 @@ export class HTTPTransport {
             }
         });
     };
+}
+
+export function handleResponse(res: TResponse) {
+    const isJson = (str: string): boolean => {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    };
+
+    if (res.status === 200) {
+        if (isJson(res.responseText)) {
+            return JSON.parse(res.responseText)
+        } else {
+            return res.responseText;
+        }
+    }
+
+    let errText: string | undefined = '';
+    if (isJson(res.responseText)) {
+        errText = JSON.parse(res.responseText).reason
+    } else {
+        errText = res.responseText
+    }
+    throw new Error(errText ? errText : `Произошла ошибка ${res.status}`);
 }

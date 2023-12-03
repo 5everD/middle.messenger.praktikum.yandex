@@ -38,7 +38,7 @@ export const content = (errors: TData, values: TData, isFormDisabled: boolean) =
     }).render(),
 
     link: new Link({
-        href: 'registration',
+        href: 'sign-up',
         text: 'Нет аккаунта?',
     }).render(),
 });
