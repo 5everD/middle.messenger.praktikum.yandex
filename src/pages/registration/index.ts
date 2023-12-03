@@ -5,8 +5,8 @@ import Input from '../../components/input';
 import Title from '../../components/title';
 import { validation } from '../../core/Validations';
 import { content } from './content';
-import { Router } from "../../core/Router";
-import { TRegisterValues, TLoginValues, authApi } from "../../api/AuthApi";
+import { Router } from '../../core/Router';
+import { TRegisterValues, TLoginValues, authApi } from '../../api/AuthApi';
 
 import './style.scss';
 
@@ -51,8 +51,8 @@ const registrationPage = () => {
                     const { login, password } = values
                     return authApi.login({ login, password } as TLoginValues)
                         .then((res: string) => {
-                            if ( res === "OK" ) {
-                                router.go("/");
+                            if ( res === 'OK' ) {
+                                router.go('/');
                             }
                         })
                 })

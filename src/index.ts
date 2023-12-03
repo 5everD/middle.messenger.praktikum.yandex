@@ -9,11 +9,11 @@ import { Router } from './core/Router';
 
 const router = new Router('#root');
 router
-    .use("/messenger", chatPage())
-    .use("/", authPage())
-    .use("/sign-up", registrationPage())
-    .use("/settings", profilePage())
-    .use("/change-password", changePWD())
-    .use("/500", page500)
-    .use("*", page404)
+    .use('/messenger', chatPage())
+    .use('/', authPage())
+    .use('/sign-up', registrationPage())
+    .use('/settings', profilePage())
+    .use('/change-password', changePWD())
+    .use('/500', page500)
+    .use('*', page404)
     .start();

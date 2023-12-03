@@ -1,19 +1,19 @@
 import template from './chat.hbs';
 import Block from '../../core/Block';
-import store from "../../store/store";
+import store from '../../store/store';
 import { validation } from '../../core/Validations';
 import { content } from './content';
-import { Router } from "../../core/Router";
-import ToolTip, { TToolTip } from "../../components/tooltip";
-import { userApi } from "../../api/UserApi";
-import { chatsApi } from "../../api/ChatsApi";
-import { letsSocket } from "../../api/websocket";
-import { TUser } from "../../types/types";
-import { TFVoid } from "../../types/void";
+import { Router } from '../../core/Router';
+import ToolTip, { TToolTip } from '../../components/tooltip';
+import { userApi } from '../../api/UserApi';
+import { chatsApi } from '../../api/ChatsApi';
+import { letsSocket } from '../../api/websocket';
+import { TUser } from '../../types/types';
+import { TFVoid } from '../../types/void';
 
 
 import './style.scss';
-import { IMAGE_PRE_URL } from "../../api/config";
+import { IMAGE_PRE_URL } from '../../api/config';
 
 export type TCurrentChat = {
     id: number,
@@ -43,7 +43,7 @@ export interface TMessageApi {
     id: number,
     user_id: number,
     chat_id: number,
-    type: "message",
+    type: 'message',
     time: string,
     content: string,
     is_read: boolean,
@@ -87,14 +87,14 @@ const chatPage = () => {
     let send: null | TSend = null;
     let currentChat: TCurrentChat = {
         id: 0,
-        name: "",
+        name: '',
         avatarLink: null,
         messages: []
     };
     const message: TToolTip = {
         isDisplay: false,
         isSuccess: false,
-        text: ""
+        text: ''
     };
 
 
@@ -134,9 +134,9 @@ const chatPage = () => {
                         el.last_message.isMy = el.last_message.user.login === store.getState().user.login
                     }
 
-                    if ( el.last_message && el.last_message.time.includes("T") && el.last_message.time.includes("+") ) {
-                        const date = el.last_message.time.split("T")[0].replace(/-/gi, ".");
-                        const time = el.last_message.time.split("T")[1].split("+")[0];
+                    if ( el.last_message && el.last_message.time.includes('T') && el.last_message.time.includes('+') ) {
+                        const date = el.last_message.time.split('T')[0].replace(/-/gi, '.');
+                        const time = el.last_message.time.split('T')[1].split('+')[0];
                         el.last_message.time = date + ' ' + time;
                     }
                     return el;
@@ -180,9 +180,9 @@ const chatPage = () => {
     function convertMessages(messages: TMessageApi[]): TMessage[] {
         const currentUserId = store.getState().user.id;
         const arr = messages.map((item: TMessage) => {
-            if (item.time.includes("T") && item.time.includes("+")) {
-                item.date = item.time.split("T")[0].replace(/-/gi,".");
-                item.time = item.time.split("T")[1].split("+")[0];
+            if (item.time.includes('T') && item.time.includes('+')) {
+                item.date = item.time.split('T')[0].replace(/-/gi,'.');
+                item.time = item.time.split('T')[1].split('+')[0];
             }
             item.isMy = item.user_id === currentUserId;
             return item;
@@ -207,11 +207,11 @@ const chatPage = () => {
             super(props, 'div', {
                 class: 'inner',
             });
-        };
+        }
 
         render() {
             return template({ ...this.props });
-        };
+        }
     }
 
     function handleClick(event: any) {
@@ -228,7 +228,7 @@ const chatPage = () => {
         }
         if (target.id === 'link-profile') {
             event.preventDefault();
-            router.go("/settings");
+            router.go('/settings');
         } else if (target.id === 'addChat') {
             isOpenAddChatPopup = true;
             updateProps();
@@ -258,21 +258,21 @@ const chatPage = () => {
         event.preventDefault();
 
         const form = event.target as HTMLElement;
-        if (form.id === "addUserForm") {
+        if (form.id === 'addUserForm') {
             const input = form.querySelector('input');
             if (input && input.value) {
                 const login = input.value;
                 userApi.searchUsersByLogin(login)
                     .then(users => {
                         const user = users.find((user: { login: string }) => user.login === login);
-                        if (!user) displayToolTip(false, "Пользователь не найден");
+                        if (!user) displayToolTip(false, 'Пользователь не найден');
                         if (user && currentChat.id) {
                             chatsApi.addUserToChat(user.id, currentChat.id)
                                 .then(res => {
                                     if (res === 'OK') {
                                         isOpenAddUserPopup = false;
                                         updateProps();
-                                        displayToolTip(true, "Пользователь успешно добавлен");
+                                        displayToolTip(true, 'Пользователь успешно добавлен');
                                     }
                                 })
                                 .catch(err => console.log('error--->', err));
@@ -280,21 +280,21 @@ const chatPage = () => {
                     })
                     .catch(err => console.log('error--->', err));
             }
-        } else if (form.id === "removeUserForm") {
+        } else if (form.id === 'removeUserForm') {
             const input = form.querySelector('input');
             if (input && input.value) {
                 const login = input.value;
                 userApi.searchUsersByLogin(login)
                     .then(users => {
                         const user = users.find((user: { login: string }) => user.login === login);
-                        if (!user) displayToolTip(false, "Пользователь не найден");
+                        if (!user) displayToolTip(false, 'Пользователь не найден');
                         if (user && currentChat.id) {
                             chatsApi.deleteUserFromChat(user.id, currentChat.id)
                                 .then(res => {
                                     if (res === 'OK') {
                                         isOpenRemoveUserPopup = false;
                                         updateProps();
-                                        displayToolTip(true, "Пользователь успешно удален");
+                                        displayToolTip(true, 'Пользователь успешно удален');
                                     }
                                 })
                                 .catch(err => console.log('error--->', err));
@@ -302,7 +302,7 @@ const chatPage = () => {
                     })
                     .catch(err => console.log('error--->', err));
             }
-        } else if (form.id === "addChatForm") {
+        } else if (form.id === 'addChatForm') {
             const input = form.querySelector('input');
             if (input && input.value) {
                 chatsApi.createChat(input.value)
@@ -312,7 +312,7 @@ const chatPage = () => {
                     })
                     .catch(err => console.log('error--->', err));
             }
-        } else if (form.id === "newMessage"){
+        } else if (form.id === 'newMessage'){
             onChangeValues(form);
 
             if (!formState.disabled) {

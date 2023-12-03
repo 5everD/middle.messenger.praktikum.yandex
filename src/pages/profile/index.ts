@@ -8,11 +8,11 @@ import Button from '../../components/button';
 import store, { StoreEvents } from '../../store/store';
 import { validation } from '../../core/Validations';
 import { content } from './content';
-import { Router } from "../../core/Router";
-import { authApi } from "../../api/AuthApi";
-import { userApi, TUserValues } from "../../api/UserApi";
-import { TUser } from "../../types/types";
-import Popup from "../../components/popup";
+import { Router } from '../../core/Router';
+import { authApi } from '../../api/AuthApi';
+import { userApi, TUserValues } from '../../api/UserApi';
+import { TUser } from '../../types/types';
+import Popup from '../../components/popup';
 
 import './style.scss';
 
@@ -73,13 +73,13 @@ const profilePage = (edit = false, isOpenChangeAvatarPopup = false) => {
             updateProps();
         } else if (target.className === 'link change-pass') {
             event.preventDefault();
-            router.go("/change-password");
+            router.go('/change-password');
         } else if(target.className === 'link logout') {
             event.preventDefault();
             authApi.logout()
                 .then((res: string) => {
-                    if (res === "OK") {
-                        router.go("/");
+                    if (res === 'OK') {
+                        router.go('/');
                     }
                 })
                 .catch(err => console.log('error--->', err))
@@ -100,7 +100,7 @@ const profilePage = (edit = false, isOpenChangeAvatarPopup = false) => {
 
         console.log(form)
 
-        if (form.className === "avatar__form") {
+        if (form.className === 'avatar__form') {
             const avatarInput: HTMLInputElement | null  = form.querySelector('#avatar');
             console.log(avatarInput)
             if (avatarInput !== null && avatarInput.files?.length) {
@@ -112,7 +112,7 @@ const profilePage = (edit = false, isOpenChangeAvatarPopup = false) => {
                     })
                     .catch(err => console.log('error--->', err));
             }
-        } else if (form.className === "profile__form") {
+        } else if (form.className === 'profile__form') {
             onChangeValues(form);
 
             if (!formState.disabled) {

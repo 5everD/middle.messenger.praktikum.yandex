@@ -1,10 +1,10 @@
-import template from "./template.hbs";
-import Block from "../../../core/Block";
+import template from './template.hbs';
+import Block from '../../../core/Block';
 import Button from '../../../components/button';
-import Input from "../../../components/input";
-import Title from "../../../components/title";
+import Input from '../../../components/input';
+import Title from '../../../components/title';
 
-import "./style.scss"
+import './style.scss'
 
 
 type TProps = {
@@ -16,7 +16,7 @@ type TProps = {
 
 class PopupContent extends Block<TProps> {
     constructor(props: TProps) {
-        super(props, "div");
+        super(props, 'div');
     }
 
     render() {

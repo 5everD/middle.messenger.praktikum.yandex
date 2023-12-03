@@ -3,9 +3,9 @@ import Button from '../../components/button';
 import Input from '../../components/input';
 import Link from '../../components/link';
 import Title from '../../components/title';
-import Popup from "../../components/popup";
-import AvatarPopup from "./avatarPopup";
-import { IMAGE_PRE_URL } from "../../api/config";
+import Popup from '../../components/popup';
+import AvatarPopup from './avatarPopup';
+import { IMAGE_PRE_URL } from '../../api/config';
 
 type TData = {
     avatar?: string,

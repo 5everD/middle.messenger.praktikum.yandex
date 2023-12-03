@@ -1,7 +1,7 @@
-import { BACKEND_URL } from "./config";
-import { Router } from "../core/Router";
-import { HTTPTransport } from "./Api";
-import { TOptionsAPI, TResponse } from "./routerTypes";
+import { BACKEND_URL } from './config';
+import { Router } from '../core/Router';
+import { HTTPTransport } from './Api';
+import { TOptionsAPI, TResponse } from './routerTypes';
 
 export type TRegisterValues = {
     first_name: string,
@@ -31,7 +31,7 @@ class AuthAPI extends HTTPTransport {
         super();
         this._baseUrl = baseUrl;
         this._headers = headers;
-    };
+    }
 
     _handleResponse(res: TResponse) {
         if ( res.status === 200 ) {
@@ -42,13 +42,13 @@ class AuthAPI extends HTTPTransport {
             }
         }
 
-        if ( res.status === 400 && window.location.pathname !== "/sign-up" ) {
+        if ( res.status === 400 && window.location.pathname !== '/sign-up' ) {
             router.go('/')
         }
 
         const errText: string | undefined = JSON.parse(res.responseText).reason;
         return Promise.reject(errText ? errText : `Произошла ошибка ${res.status}`)
-    };
+    }
 
     register(registerValues: TRegisterValues) {
         return this.post(
@@ -58,7 +58,7 @@ class AuthAPI extends HTTPTransport {
                 data: registerValues
             }
         ).then(this._handleResponse)
-    };
+    }
 
     login(loginValues: TLoginValues) {
         return this.post(
@@ -68,7 +68,7 @@ class AuthAPI extends HTTPTransport {
                 data: loginValues
             }
         ).then(this._handleResponse)
-    };
+    }
 
     getUser() {
         return this.get(
@@ -77,7 +77,7 @@ class AuthAPI extends HTTPTransport {
                 headers: this._headers,
             }
         ).then(this._handleResponse)
-    };
+    }
 
     logout() {
         return this.post(
@@ -86,7 +86,7 @@ class AuthAPI extends HTTPTransport {
                 headers: this._headers,
             }
         ).then(this._handleResponse)
-    };
+    }
 }
 
 export const authApi = new AuthAPI({

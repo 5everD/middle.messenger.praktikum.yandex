@@ -1,6 +1,6 @@
-import { BACKEND_URL } from "./config";
-import { handleResponse, HTTPTransport } from "./Api";
-import { TOptionsAPI } from "./routerTypes";
+import { BACKEND_URL } from './config';
+import { handleResponse, HTTPTransport } from './Api';
+import { TOptionsAPI } from './routerTypes';
 
 class ChatsApi extends HTTPTransport {
     private _baseUrl: string;
@@ -13,7 +13,7 @@ class ChatsApi extends HTTPTransport {
         super();
         this._baseUrl = baseUrl
         this._headers = headers
-    };
+    }
 
     getChats() {
         return this.get(
@@ -22,7 +22,7 @@ class ChatsApi extends HTTPTransport {
                 headers: this._headers,
             }
         ).then(handleResponse);
-    };
+    }
 
     createChat(title: string) {
         return this.post(
@@ -32,7 +32,7 @@ class ChatsApi extends HTTPTransport {
                 data: { title }
             }
         ).then(handleResponse);
-    };
+    }
 
     getChatToken(chatId: number) {
         return this.post(
@@ -41,7 +41,7 @@ class ChatsApi extends HTTPTransport {
                 headers: this._headers,
             }
         ).then(handleResponse);
-    };
+    }
 
     addUserToChat(userId: number, chatId: number) {
         return this.put(
@@ -54,7 +54,7 @@ class ChatsApi extends HTTPTransport {
                 }
             }
         ).then(handleResponse);
-    };
+    }
 
     deleteUserFromChat(userId: number, chatId: number) {
         return this.delete(

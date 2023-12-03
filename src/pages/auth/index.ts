@@ -5,8 +5,8 @@ import Input from '../../components/input';
 import Title from '../../components/title';
 import { validation } from '../../core/Validations';
 import { content } from './content';
-import { Router } from "../../core/Router";
-import { TLoginValues, authApi } from "../../api/AuthApi";
+import { Router } from '../../core/Router';
+import { TLoginValues, authApi } from '../../api/AuthApi';
 
 import './style.scss';
 
@@ -45,8 +45,8 @@ const authPage = () => {
             authApi.login(values as TLoginValues)
                 .then((res: string) => {
                     console.log(res)
-                    if ( res === "OK" ) {
-                        router.go("/messenger");
+                    if ( res === 'OK' ) {
+                        router.go('/messenger');
                     }
                 })
                 .catch(err => console.log('error --->', err));
@@ -69,7 +69,7 @@ const authPage = () => {
         const target = event.target as HTMLElement;
         if ( target.className === 'link' ) {
             event.preventDefault();
-            router.go("/sign-up");
+            router.go('/sign-up');
         }
     }
 

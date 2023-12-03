@@ -5,8 +5,8 @@ import Input from '../../components/input';
 import Title from '../../components/title';
 import { validation } from '../../core/Validations';
 import { content } from './content';
-import { userApi, TPasswords } from "../../api/UserApi";
-import { Router } from "../../core/Router";
+import { userApi, TPasswords } from '../../api/UserApi';
+import { Router } from '../../core/Router';
 
 import './style.scss';
 
@@ -43,8 +43,8 @@ const changePWD = () => {
         if (!formState.disabled) {
             userApi.changeUserPassword(values as TPasswords)
                 .then((res: string) => {
-                    if (res === "OK") {
-                        router.go("/settings");
+                    if (res === 'OK') {
+                        router.go('/settings');
                     }
                 })
                 .catch(err => console.log('error--->', err));

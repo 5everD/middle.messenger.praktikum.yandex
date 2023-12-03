@@ -1,5 +1,5 @@
-import template from "./template.hbs";
-import Block from "../../core/Block";
+import template from './template.hbs';
+import Block from '../../core/Block';
 
 type TProps = {
     content: unknown,

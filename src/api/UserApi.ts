@@ -1,6 +1,6 @@
-import { BACKEND_URL } from "./config";
-import { handleResponse, HTTPTransport } from "./Api";
-import { TOptionsAPI } from "./routerTypes";
+import { BACKEND_URL } from './config';
+import { handleResponse, HTTPTransport } from './Api';
+import { TOptionsAPI } from './routerTypes';
 
 export type TUserValues = {
     first_name: string,
@@ -56,7 +56,7 @@ class UserApi extends HTTPTransport {
             `${this._baseUrl}/api/v2/user/profile/avatar`,
             { data }
         ).then(handleResponse);
-    };
+    }
 
     searchUsersByLogin(userLogin: string) {
         return this.post(
@@ -66,7 +66,7 @@ class UserApi extends HTTPTransport {
                 data: { login: userLogin }
             }
         ).then(handleResponse);
-    };
+    }
 }
 
 export const userApi = new UserApi({

@@ -1,11 +1,11 @@
-import { TChat, TCurrentChat } from ".";
-import Popup from "../../components/popup";
-import chatPopup from "./chatPopup";
-import Button from "../../components/button";
-import Input from "../../components/input";
+import { TChat, TCurrentChat } from '.';
+import Popup from '../../components/popup';
+import chatPopup from './chatPopup';
+import Button from '../../components/button';
+import Input from '../../components/input';
 import Link from '../../components/link';
-import ToolTip, { TToolTip } from "../../components/tooltip";
-import Title from "../../components/title";
+import ToolTip, { TToolTip } from '../../components/tooltip';
+import Title from '../../components/title';
 
 type TData = {
     message?: string | undefined
@@ -28,7 +28,7 @@ export const content = (
         text: 'Профиль',
     }).render(),
     toolTip: new ToolTip(message).render(),
-    img_url: `https://ya-praktikum.tech/api/v2/resources/`,
+    img_url: 'https://ya-praktikum.tech/api/v2/resources/',
     chats: chats,
     currentChat: currentChat,
     isOpenChatUsersPopup: isOpenChatUsersPopup,
@@ -42,17 +42,17 @@ export const content = (
                 title: 'Добавить пользователя',
                 class: 'addUser'
             }).render(),
-            formId: "addUserForm",
+            formId: 'addUserForm',
             input: new Input({
                 class: 'addUser',
-                name: "login",
-                label: "Логин",
-                value: "",
+                name: 'login',
+                label: 'Логин',
+                value: '',
                 errorText: '',
-                type: "text",
+                type: 'text',
             }).render(),
             button: new Button({
-                text: "Добавить",
+                text: 'Добавить',
                 disabled: false
             }).render()
         }).render()
@@ -64,17 +64,17 @@ export const content = (
                 title: 'Удалить пользователя',
                 class: 'removeUser'
             }).render(),
-            formId: "removeUserForm",
+            formId: 'removeUserForm',
             input: new Input({
                 class: 'removeUser',
-                name: "login",
-                label: "Логин",
-                value: "",
+                name: 'login',
+                label: 'Логин',
+                value: '',
                 errorText: '',
-                type: "text",
+                type: 'text',
             }).render(),
             button: new Button({
-                text: "Удалить",
+                text: 'Удалить',
                 disabled: false
             }).render()
         }).render()
@@ -86,17 +86,17 @@ export const content = (
                 title: 'Создать чат',
                 class: 'addChat'
             }).render(),
-            formId: "addChatForm",
+            formId: 'addChatForm',
             input: new Input({
                 class: 'addChat',
-                name: "title",
-                label: "Название чата",
-                value: "",
+                name: 'title',
+                label: 'Название чата',
+                value: '',
                 errorText: '',
-                type: "text",
+                type: 'text',
             }).render(),
             button: new Button({
-                text: "Создать",
+                text: 'Создать',
                 disabled: false
             }).render()
         }).render()

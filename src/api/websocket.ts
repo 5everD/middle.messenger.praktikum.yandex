@@ -1,4 +1,4 @@
-import { TMessageApi } from "../pages/chat";
+import { TMessageApi } from '../pages/chat';
 
 export function letsSocket(
     userId: number,
@@ -13,15 +13,15 @@ export function letsSocket(
 
     let interval: NodeJS.Timer | null = null;
 
-    socket.addEventListener("message", (event) => {
+    socket.addEventListener('message', (event) => {
         const data = JSON.parse(event.data)
         if ( data.type === 'message' || Array.isArray(data) ) {
             onMessage(data);
         }
     });
 
-    socket.addEventListener("error", (event: any) => {
-        console.log("Ошибка", event.message);
+    socket.addEventListener('error', (event: any) => {
+        console.log('Ошибка', event.message);
     });
 
     const send = (message: string) => {
@@ -31,28 +31,28 @@ export function letsSocket(
         }));
     };
 
-    socket.addEventListener("open", () => {
+    socket.addEventListener('open', () => {
         socket.send(
             JSON.stringify({
                 content: 0,
-                type: "get old"
+                type: 'get old'
             })
         );
 
         interval = setInterval(() => {
             socket.send(
                 JSON.stringify({
-                    type: "ping",
+                    type: 'ping',
                 })
             );
         }, 50000);
     });
 
-    socket.addEventListener("close", (event) => {
+    socket.addEventListener('close', (event) => {
         if ( event.wasClean ) {
-            console.log("Соединение закрыто чисто");
+            console.log('Соединение закрыто чисто');
         } else {
-            console.log("Обрыв соединения");
+            console.log('Обрыв соединения');
         }
         if ( interval ) {
             clearInterval(interval);

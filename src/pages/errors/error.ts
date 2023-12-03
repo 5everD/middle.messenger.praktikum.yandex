@@ -3,8 +3,8 @@ import Block from '../../core/Block';
 import Link from '../../components/link';
 import Text from '../../components/text';
 import Title from '../../components/title';
-import { Router } from "../../core/Router";
-import {TFVoid} from "../../types/void";
+import { Router } from '../../core/Router';
+import {TFVoid} from '../../types/void';
 
 import './style.scss';
 
@@ -34,7 +34,7 @@ function handleClick(event: Event) {
     const target = event.target as HTMLElement
     if (target.className === 'link') {
         event.preventDefault();
-        router.go("/messenger");
+        router.go('/messenger');
     }
 }
 
