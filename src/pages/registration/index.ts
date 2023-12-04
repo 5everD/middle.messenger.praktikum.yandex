@@ -3,8 +3,10 @@ import Block from '../../core/Block';
 import Link from '../../components/link';
 import Input from '../../components/input';
 import Title from '../../components/title';
-import { validation } from '../../core/validations';
+import { validation } from '../../core/Validations';
 import { content } from './content';
+import { Router } from '../../core/Router';
+import { TRegisterValues, TLoginValues, authApi } from '../../api/AuthApi';
 
 import './style.scss';
 
@@ -23,6 +25,8 @@ type TProps = {
 
 const registrationPage = () => {
     const { errors, values, formState, onChangeValues } = validation();
+    const router = new Router();
+
     class Registration extends Block {
         constructor(props: TProps) {
             super(props, 'form', {
@@ -41,8 +45,18 @@ const registrationPage = () => {
         const form = event.target as HTMLElement;
         onChangeValues(form);
 
-        if (!formState.disabled) {
-            console.log(values);
+        if ( !formState.disabled ) {
+            authApi.register(values as TRegisterValues)
+                .then(() => {
+                    const { login, password } = values
+                    return authApi.login({ login, password } as TLoginValues)
+                        .then((res: string) => {
+                            if ( res === 'OK' ) {
+                                router.go('/');
+                            }
+                        })
+                })
+                .catch(err => console.log('error --->', err));
         }
 
         page.setProps(

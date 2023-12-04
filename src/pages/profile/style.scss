@@ -52,6 +52,13 @@
         border-radius: 65px;
     }
 
+    &__img {
+        width: 130px;
+        height: 130px;
+        border-radius: 65px;
+        object-fit: cover;
+    }
+
     &__overlay {
         display: flex;
         position: absolute;
@@ -185,5 +192,9 @@
         border: none;
         border-radius: 8px;
         background-color: $blue;
+
+        &:disabled {
+            background-color: $light-gray;
+        }
     }
 }

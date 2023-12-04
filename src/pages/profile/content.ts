@@ -3,22 +3,28 @@ import Button from '../../components/button';
 import Input from '../../components/input';
 import Link from '../../components/link';
 import Title from '../../components/title';
+import Popup from '../../components/popup';
+import AvatarPopup from './avatarPopup';
+import { IMAGE_PRE_URL } from '../../api/config';
 
 type TData = {
-    email?: string,
-    login?: string,
-    first_name?: string,
-    second_name?: string,
+    avatar?: string,
     display_name?: string,
+    email?: string,
+    first_name?: string,
+    login?: string,
     phone?: string,
+    second_name?: string,
 };
 
+
+
 const className = 'profile';
-export const content = (errors: TData, values: TData, edit: boolean, isFormDisabled: boolean) => ({
+export const content = (errors: TData, values: TData, edit: boolean, isFormDisabled: boolean, isOpenChangeAvatarPopup: boolean) => ({
     edit,
     avatar: new Avatar({
         class: className,
-        image: '',
+        image: values.avatar ? `${IMAGE_PRE_URL}${values.avatar}` : '',
     }).render(),
 
     title: new Title({
@@ -93,7 +99,7 @@ export const content = (errors: TData, values: TData, edit: boolean, isFormDisab
     }).render(),
 
     linkChangePass: new Link({
-        class: !edit ? 'link' : 'display-none',
+        class: !edit ? 'link change-pass' : 'display-none',
         href: '/change-password',
         text: 'Изменить пароль',
     }).render(),
@@ -106,7 +112,26 @@ export const content = (errors: TData, values: TData, edit: boolean, isFormDisab
 
     linkExit: new Link({
         class: 'link logout',
-        href: '/auth',
+        href: '/',
         text: 'Выйти',
     }).render(),
+
+    popup: new Popup({
+        isOpen: isOpenChangeAvatarPopup,
+        content: new AvatarPopup({
+            title: new Title({
+                title: 'Загрузите файл',
+                class: 'Upload'
+            }).render(),
+            avatarInput: new Input({
+                class: 'upload',
+                type: 'file',
+                name: 'avatar',
+                label: 'Выбрать файл на компьютере',
+            }).render(),
+            button: new Button({
+                text: 'Поменять',
+            }).render()
+        }).render()
+    }).render()
 });

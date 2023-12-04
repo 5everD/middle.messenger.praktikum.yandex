@@ -1,14 +1,14 @@
 export type TKeys =
-    'login' |
-    'password' |
-    'oldPassword' |
-    'newPassword' |
-    'repeatPassword' |
-    'first_name' |
-    'second_name' |
     'email' |
+    'first_name' |
+    'login'  |
+    'message' |
+    'newPassword' |
+    'oldPassword' |
+    'password' |
     'phone' |
-    'message';
+    'repeatPassword' |
+    'second_name';
 
 export type TValidationsData = {
     [key in TKeys]?: string;

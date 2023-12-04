@@ -50,7 +50,7 @@ export const content = (errors: TData, values: TData, isFormDisabled: boolean) =
     }).render(),
 
     link: new Link({
-        href: '/profile',
+        href: '/settings',
         text: 'отмена',
     }).render(),
 });

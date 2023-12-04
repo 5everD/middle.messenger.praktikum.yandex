@@ -4,10 +4,16 @@
         type="{{type}}"
         name="{{name}}"
         id="{{name}}"
+        {{#if value}}
         value="{{value}}"
+        {{/if}}
         {{#if disabled}}
             disabled
         {{/if}}
+        {{#if accept}}
+            accept="{{accept}}"
+        {{/if}}
+        placeholder=" "
     />
     {{#if errorText}}
         <span>{{errorText}}</span>

@@ -3,8 +3,10 @@ import Block from '../../core/Block';
 import Link from '../../components/link';
 import Input from '../../components/input';
 import Title from '../../components/title';
-import { validation } from '../../core/validations';
+import { validation } from '../../core/Validations';
 import { content } from './content';
+import { userApi, TPasswords } from '../../api/UserApi';
+import { Router } from '../../core/Router';
 
 import './style.scss';
 
@@ -19,6 +21,7 @@ type TProps = {
 
 const changePWD = () => {
     const { errors, values, formState, onChangeValues } = validation();
+    const router = new Router();
     class ChangePWD extends Block {
         constructor(props: TProps) {
             super(props, 'form', {
@@ -38,7 +41,13 @@ const changePWD = () => {
         onChangeValues(form);
 
         if (!formState.disabled) {
-            console.log(values);
+            userApi.changeUserPassword(values as TPasswords)
+                .then((res: string) => {
+                    if (res === 'OK') {
+                        router.go('/settings');
+                    }
+                })
+                .catch(err => console.log('error--->', err));
         }
 
         page.setProps(

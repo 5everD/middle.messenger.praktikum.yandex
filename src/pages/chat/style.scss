@@ -12,7 +12,7 @@
 
         .attach-block {
             position: absolute;
-            display: flex;
+            display: none;
             padding: 15px;
             bottom: 55px;
             left: 10px;
@@ -28,6 +28,12 @@
             color: $primary-color;
             z-index: 1000;
             box-sizing: border-box;
+            list-style-type: none;
+            background-color: rgb(255 255 255 / 70%);
+
+            &_opened {
+                display: flex;
+            }
 
             button {
                 display: flex;
@@ -75,6 +81,13 @@
                     height: 34px;
                     background: url("../../assets/icons/default_img.svg") center / 20px no-repeat $secondary-light-gray;
                     border-radius: 17px;
+
+                    img {
+                        width: 34px;
+                        height: 34px;
+                        border-radius: 17px;
+                        object-fit: cover;
+                    }
                 }
             }
 
@@ -119,7 +132,7 @@
 
                 &-block {
                     position: absolute;
-                    display: flex;
+                    display: none;
                     padding: 15px;
                     top: 65px;
                     right: 0;
@@ -135,6 +148,12 @@
                     color: $primary-color;
                     z-index: 1000;
                     box-sizing: border-box;
+                    list-style-type: none;
+                    background-color: rgb(255 255 255 / 70%);
+
+                    &_opened {
+                        display: flex;
+                    }
 
                     button {
                         display: flex;
@@ -155,6 +174,10 @@
                             border-radius: 11px;
                             background: url("../../assets/icons/blue-cross.svg") center / 12px no-repeat;
                         }
+
+                        .remove {
+                            transform: rotate(45deg);
+                        }
                     }
                 }
             }
@@ -174,7 +197,7 @@
                 border-radius: 17px;
                 margin: 0 10px 0 0;
                 padding: 0;
-                background: url("../../assets/icons/sattach.svg") center / 34px no-repeat;
+                background: url("../../assets/icons/sattach.svg") center / 30px no-repeat;
                 border: none;
                 cursor: pointer;
 
@@ -200,7 +223,7 @@
             }
 
             .submit-button {
-                width: 28px;
+                width: 32px;
                 height: 28px;
                 border-radius: 14px;
                 margin: 0 0 0 10px;
@@ -214,12 +237,26 @@
                     opacity: 0.7;
                 }
             }
+
+            .error {
+                position: absolute;
+                top: -40px;
+                right: 10px;
+                display: inline-flex;
+                background-color: $red;
+                font-size: 11px;
+                line-height: 13px;
+                color: $white;
+                padding: 10px 15px;
+                border-radius: 5px;
+            }
         }
 
         .chat-board {
             margin: 0;
-            padding: 0;
+            padding: 0 20px 0 0;
             list-style-type: none;
+            overflow-y: auto;
 
             li {
                 display: flex;
@@ -245,7 +282,7 @@
                     background-color: $tertiary-light-gray;
 
                     p {
-                        margin: 0;
+                        margin: 0 0 15px;
                         font-weight: 500;
                         font-size: 12px;
                         line-height: 15px;
@@ -317,6 +354,31 @@
         overflow: hidden;
         background-color: $tertiary-light-gray;
         box-sizing: border-box;
+
+        button {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .cross {
+            display: flex;
+            width: 20px;
+            height: 20px;
+            border: 1px solid $blue;
+            border-radius: 11px;
+            background: url("../../assets/icons/blue-cross.svg") center / 12px no-repeat;
+        }
 
         a {
             padding-right: 10px;
@@ -417,6 +479,13 @@
                             height: 47px;
                             background: url("../../assets/icons/default_img.svg") center / 20px no-repeat $secondary-light-gray;
                             border-radius: 24px;
+
+                            img {
+                                width: 47px;
+                                height: 47px;
+                                border-radius: 24px;
+                                object-fit: cover;
+                            }
                         }
                     }
 

@@ -1,0 +1,27 @@
+@import "./src/styles/colors";
+
+.popup {
+    .Upload__title {
+        text-align: center;
+        color: #1e1e1e;
+        margin: 0 0 60px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+    }
+
+    .avatar__form {
+        label {
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        input {
+            display: none;
+        }
+    }
+}
