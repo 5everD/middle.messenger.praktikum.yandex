@@ -35,7 +35,9 @@
                 display: flex;
             }
 
-            button {
+            &_file,
+            &__image,
+            &__location {
                 display: flex;
                 padding: 0;
                 margin: 0;
@@ -155,7 +157,8 @@
                         display: flex;
                     }
 
-                    button {
+                    &__add,
+                    &__remove{
                         display: flex;
                         padding: 0;
                         margin: 0;
