@@ -6,6 +6,8 @@ import registrationPage from './pages/registration';
 import { page404, page500 } from './pages/errors/error';
 import { Router } from './core/Router';
 
+import './style.scss'
+
 
 const router = new Router('#root');
 router
