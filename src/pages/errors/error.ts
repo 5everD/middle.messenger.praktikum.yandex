@@ -16,7 +16,7 @@ type TProps = {
     events: Record<string, TFVoid>,
 }
 
-class Error extends Block {
+class Error extends Block<TProps> {
     constructor(props: TProps) {
         super(props, 'section', {
             class: 'error',

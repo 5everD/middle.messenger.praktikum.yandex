@@ -11,7 +11,7 @@ import { Router } from '../../core/Router';
 import './style.scss';
 
 type TProps = {
-    events: Record<string, (event: Event) => void>,
+    events?: Record<string, (event: Event) => void>,
     title: Title,
     link: Link,
     inputOldPassword: Input,
@@ -22,7 +22,7 @@ type TProps = {
 const changePWD = () => {
     const { errors, values, formState, onChangeValues } = validation();
     const router = new Router();
-    class ChangePWD extends Block {
+    class ChangePWD extends Block<TProps> {
         constructor(props: TProps) {
             super(props, 'form', {
                 class: 'change-password',

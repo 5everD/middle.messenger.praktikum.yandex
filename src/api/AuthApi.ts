@@ -45,8 +45,8 @@ class AuthAPI extends HTTPTransport {
         if ( res.status === 400 && window.location.pathname !== '/sign-up' ) {
             router.go('/');
         }
-        if ( res.status === 400 && res.responseText.includes("User already in system")) {
-            router.go("/messenger");
+        if ( res.status === 400 && res.responseText.includes('User already in system')) {
+            router.go('/messenger');
         }
 
         const errText: string | undefined = JSON.parse(res.responseText).reason;

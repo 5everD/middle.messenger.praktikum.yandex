@@ -11,7 +11,7 @@ import { TRegisterValues, TLoginValues, authApi } from '../../api/AuthApi';
 import './style.scss';
 
 type TProps = {
-    events: Record<string, (event: Event) => void>,
+    events?: Record<string, (event: Event) => void>,
     title: Title,
     link: Link,
     inputEmail: Input,
@@ -27,7 +27,7 @@ const registrationPage = () => {
     const { errors, values, formState, onChangeValues } = validation();
     const router = new Router();
 
-    class Registration extends Block {
+    class Registration extends Block<TProps> {
         constructor(props: TProps) {
             super(props, 'form', {
                 class: 'registration',

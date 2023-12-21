@@ -12,7 +12,7 @@ import './style.scss';
 
 
 type TProps = {
-    events: Record<string, (event: Event) => void>,
+    events?: Record<string, (event: Event) => void>,
     title: Title,
     link: Link,
     inputLogin: Input,
@@ -23,7 +23,7 @@ const authPage = () => {
     const { errors, values, formState, onChangeValues } = validation();
     const router = new Router();
 
-    class Auth extends Block {
+    class Auth extends Block<TProps> {
         constructor(props: TProps) {
             super(props, 'form', {
                 class: 'auth',

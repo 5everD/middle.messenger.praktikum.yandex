@@ -8,7 +8,7 @@ class Block<PropsType extends Record<string, any> = any> {
         FLOW_RENDER: 'flow:render',
     };
 
-    protected props: PropsType;
+    public props: PropsType;
 
     public isHidden: boolean;
 

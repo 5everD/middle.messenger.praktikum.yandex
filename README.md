@@ -16,9 +16,11 @@ TypeScript
 JavaScript
 Handlebars
 Parcel
+Webpack
 SASS
 eslint
 stylelint
+Pre-commit
 ```
 
 #### Установка проекта:
