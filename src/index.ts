@@ -8,7 +8,6 @@ import { Router } from './core/Router';
 
 import './style.scss'
 
-
 const router = new Router('#root');
 router
     .use('/messenger', chatPage())
