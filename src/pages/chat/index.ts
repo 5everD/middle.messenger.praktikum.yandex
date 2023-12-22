@@ -158,7 +158,7 @@ const chatPage = () => {
                 currentChat = {
                     ...currentChat,
                     name: item.title,
-                    avatarLink: item.last_message?.user?.avatar
+                    avatarLink: item.avatar || item.last_message?.user?.avatar
                         ? `${IMAGE_PRE_URL}${item.last_message?.user?.avatar}`
                         : '',
                     id: chatId
