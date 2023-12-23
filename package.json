@@ -55,7 +55,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "scripts": {
-    "start": "webpack",
+    "start": "npm run build && node server.mjs",
     "dev": "webpack serve",
     "build": "webpack --mode production",
     "test": "mocha",
