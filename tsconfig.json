@@ -105,6 +105,11 @@
             "DOM",
         ],
     },
+    "include": [
+        "src/**/*",
+        "src/**/*.test.ts",
+        "server.js"
+    ],
     "typedocOptions": {
         "entryPoints": ["./src/index.ts"],
     }
