@@ -17,7 +17,7 @@ import Popup from '../../components/popup';
 import './style.scss';
 
 export type TProps = {
-    events: Record<string, (event: Event) => void>,
+    events?: Record<string, (event: Event) => void>,
     avatar: Avatar,
     title: Title,
     inputEmail: Input,
@@ -37,7 +37,7 @@ const profilePage = (edit = false, isOpenChangeAvatarPopup = false) => {
     const { errors, values, init: initValidator, formState, onChangeValues } = validation();
     const router = new Router();
 
-    class Profile extends Block {
+    class Profile extends Block<TProps> {
         constructor(props: TProps) {
             super(props, 'div', {
                 class: 'inner',

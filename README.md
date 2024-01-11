@@ -2,35 +2,39 @@
 
 ### Проектная работа: разработка веб-приложения «Чат»
 
-#### Описание проэкта:
+#### Описание проекта:
 
-Чат - приложение для обмена сообщениями между пользователями. На данном этапе реализованна верстка приложения.
+Чат - приложение для обмена сообщениями между пользователями.
 
 [![N|Solid](https://img.shields.io/badge/-Посмотреть%20макет%20Figma-orange)](https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?type=design&node-id=0%3A1&t=FrncnjMl5bcihuiA-1)
 [![N|Solid](https://img.shields.io/badge/-Посмотреть%20сайт%20на%20Netlify-blue)](https://y-practicum.netlify.app/)
 
-#### примененные Технологии:
+#### Примененные технологии:
 
 ```
 TypeScript
 JavaScript
 Handlebars
 Parcel
+Webpack
 SASS
-eslint
-stylelint
+Eslint
+Stylelint
+Husky
+Pre-commit
 ```
 
 #### Установка проекта:
 
-1. `git clone https://github.com/5everD/practicum.git`
+1. `git clone https://github.com/5everD/middle.messenger.praktikum.yandex.git`
 2. `cd practicum`
 3. `git checkout deploy`
 4. `npm install`
-5. `npm run build`
+5. `npm run start`
 
-#### Использование linter и stylelint
+#### Использование mocha, linter и stylelint:
 
+- `npm run test`
 - `npm run lint`
 - `npm run stylelint`
 

@@ -1,4 +1,8 @@
 {
+    "env": {
+        "node": true,
+        "commonjs": true
+    },
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended"
@@ -7,8 +11,10 @@
     "plugins": ["@typescript-eslint"],
     "rules": {
         "@typescript-eslint/no-unused-vars": 2,
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "no-useless-escape": "off",
         "indent": ["error", 4],
-        "quotes": ["error", "single", { "avoidEscape": true }]
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }]
     }
 }
